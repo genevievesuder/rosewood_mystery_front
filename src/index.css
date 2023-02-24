@@ -1,0 +1,248 @@
+
+body { min-height: 100vh; 
+  /* background-color: black;  */
+}
+
+/* || Imports */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
+
+/* font-family: 'Nanum Myeongjo', serif; */
+
+/* … */
+
+/* || General styles */
+
+/* … */
+
+/* || Typography */
+
+/* … */
+
+/* || Header and Main Navigation */
+
+.site-main {
+  background-size: stretch;
+  /* background-image: url("/mainsite.jpg") */
+}
+
+.welcome-text{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
+  z-index: 2000;
+  border: 3px solid rgb(255, 0, 68);
+  min-height: 20vh;
+  min-width: 30vw;
+}
+
+.play-btn{
+  font-size: 30px;
+}
+
+.play-btn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.welcome-box{
+  /* backdrop-filter: blur(4px); */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
+  z-index: 1000;
+  /* background-color: #494b427d; */
+  padding: 5px;
+  color: #FFFFFF;
+  font-weight: bold;
+  min-height: 20vh;
+  min-width: 50vw;
+}
+
+.welcome-border{
+  width: 100%;
+  border: 20px solid rgb(82, 30, 30);
+  border-style: ridge;
+}
+
+.background-img{
+  min-width: 100%;
+  filter: brightness(50%);
+}
+
+.main-nav{
+  font-family: 'Nanum Myeongjo', serif;
+  background-color: white;
+  text-align: center;
+  font-size: 25px;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  background-color: rgb(77, 53, 29);
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+/* … */
+
+/* ||Game Navigation */
+
+.game-nav{
+  background-color: white;
+}
+
+
+/* … */
+
+
+/* || Computer */
+
+/* Why when I put 100% for height it doesnt do it? Shouldnt it go to the parent (body) */
+.monitor-container {
+background-color: rgb(219, 219, 223);
+height: 100vh;
+max-width: 98vw;
+}
+
+.software-name{
+background-color: rgba(82, 28, 99, 0.523);
+text-align: center;
+}
+
+.monitor-toolbar {
+background-color: white;
+/* text-align: center; */
+}
+
+.toolbar-buttons{
+/* background-color: rgb(219, 227, 219); */
+margin-left: 20px;
+margin-right: 20px;
+margin-top: 3px;
+margin-bottom: 3px;
+border: 2px solid black;
+box-shadow: 4px 4px;
+}
+
+.toolbar-buttons:hover{
+  cursor: pointer;
+}
+
+.database-container{
+/* background-color: darkkhaki; */
+}
+
+.db-toolbar{
+  /* background-color:skyblue; */
+  display: grid;
+  grid-template-columns: 8vw 2vw 10vw 80vw;
+  grid-template-rows: 3vh;
+  overflow:hidden;
+
+}
+
+.db-search{
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.search-btn{
+  text-align: center;
+  grid-column: 2;
+  grid-row: 1;
+  min-width:2vw;
+  max-width:2vw;
+}
+
+.db-filter{
+ grid-column: 3;
+}
+
+.book-header{
+  width:100%;
+  display: grid;
+  grid-template-columns: 3vw 30vw 20vw 13vw 14vw;
+  grid-template-rows: 100vh;
+  overflow: hidden;
+  text-align: center;
+}
+
+.book-attr-label{
+  border: 1px solid black;
+}
+
+.db-content-container{
+  /* display: grid; 2 boxes, left to display book img and right book list */
+  display: grid;
+  grid-template-columns: 20vw 80vw;
+  grid-template-rows: 100vh;
+  overflow:hidden;
+}
+
+.single-book-click{
+  padding: 10px;
+  padding-top: 10vh;
+  grid-column: 1;
+  grid-row: 1;
+  /* background-color:rgb(110, 110, 140); */
+  /* min-width: 100%;
+  max-width: 100%; */
+}
+
+
+
+.book-img{
+  margin-top: 10px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.db-col-2{
+  /* grid-column: 2;
+  grid-row: 1; */
+  min-width:100%;
+  background-color: rgb(248, 248, 248);
+  overflow: scroll;
+}
+
+
+.db-booklist{
+  /* display: grid; Columns for book attributes */
+  width:100%;
+  display: grid;
+  grid-template-columns: 3vw 30vw 20vw 13vw 14vw;
+  /* grid-template-rows: 100vh; */
+  overflow: hidden;
+}
+
+.dbc-1{
+ border: 1px solid black;
+}
+.dbc-2{
+  border: 1px solid black;
+}
+.dbc-3{
+  border: 1px solid black;
+}
+.dbc-4{
+  border: 1px solid black;
+}
+.dbc-5{
+  border: 1px solid black;
+}
+
+/* … */
+
+
+/* Background image css example from Seunggyu -->> */
+/* background-image: url('https://www.pngmart.com/files/3/Rick-And-Morty-PNG-Photos.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover; */
