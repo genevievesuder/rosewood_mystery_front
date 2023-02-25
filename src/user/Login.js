@@ -21,10 +21,13 @@ const handleChange = ({target: {name, value}}) => {
 
 
   return (
-    <div>
-    <form onSubmit={(e) => handleLogin(e, formData)}>
+    <div className="signin-container">
+      <h3>Welcome back</h3>
+      <span>Sign in to play</span>
+    <form className="signup-form" onSubmit={(e) => handleLogin(e, formData)}>
       <label>Email</label><br/>
       <input
+      className="signup-input"
         name="email"
         type="text"
         placeholder="johndoe"
@@ -35,6 +38,7 @@ const handleChange = ({target: {name, value}}) => {
       <br/>
       <label>Password</label><br/>
       <input
+      className="signup-input"
         name="password"
         type="password"
         placeholder="password"

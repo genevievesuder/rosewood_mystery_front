@@ -21,10 +21,13 @@ const Signup = ({setToggleAuth}) => {
   // const navigate = useNavigate();
 
   return (
-    <div>
-       <form onSubmit={(e) => handleSignup(e, formData)}>
+    <div className="signin-container">
+      <h3>Welcome</h3>
+      <span>Sign up to play</span>
+       <form className="signup-form" onSubmit={(e) => handleSignup(e, formData)}>
         <label>Email</label><br/>
         <input
+          className="signup-input"
           name="email"
           type="text"
           placeholder="johndoe"
@@ -35,6 +38,7 @@ const Signup = ({setToggleAuth}) => {
       <br/>
         <label>Password</label><br/>
         <input
+          className="signup-input"
           name="password"
           type="password"
           placeholder="password"
@@ -45,6 +49,7 @@ const Signup = ({setToggleAuth}) => {
         <br/>
         <label>Password Confirmation</label><br/>
         <input
+          className="signup-input"
           name="password_confirmation"
           type="password"
           placeholder="password"
@@ -56,6 +61,7 @@ const Signup = ({setToggleAuth}) => {
         
         <label>Name your character</label><br/>
         <input
+          className="signup-input"
           name="character_name"
           type="test"
           placeholder="Name"

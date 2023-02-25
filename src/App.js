@@ -13,13 +13,19 @@ import { useState, useContext } from 'react'
 import { UserContext } from './context/UserContext';
 import Journal from './components/Journal';
 import LibraryEntry from './components/LibraryEntry';
+import Notification from './main/Notification';
+import MembersDb from './components/MembersDb';
+import Settings from './components/Settings';
+import Help from './components/Help';
+
+
 
 function App() {
   const {user} = useContext(UserContext)
 
   return (
     <div className="App">
-     {/* <Notifications /> */}
+     <Notification />
       {/* <Nav /> */}
       { user ? <GameNav /> : null }
         <Routes>
@@ -28,6 +34,9 @@ function App() {
           <Route path="/home" element={<Home/>} />
           <Route path="/library" element={<LibraryEntry />} />
           <Route path="/computer" element={<Computer />} />
+          <Route path="/members" element={<MembersDb />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/help" element={<Help />} />
           <Route path="/info" element={<Info/>} />
           <Route path="/play" element={<PlayGame/>} />
           <Route path="/login" element={<Login/>} />

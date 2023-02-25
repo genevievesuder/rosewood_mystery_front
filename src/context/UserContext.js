@@ -1,13 +1,17 @@
-import { createContext, useState, useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { createContext, useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { NotifContext } from '../context/NotifContext';
+
 
 
 const UserContext = createContext()
 
 const UserProvider = ({children}) => {
-//   const navigate = useNavigate()
+
+const {notif, setNotif} = useContext(NotifContext)
+const navigate = useNavigate()
   const [user, setUser] = useState(null);
-//   const [notification, setNotification] = useState("")
+
 
   useEffect(() => {
       fetch("/authorized_user")
@@ -39,7 +43,7 @@ const UserProvider = ({children}) => {
           setUser(userObj)
         })
       } else {
-        resp.json().then(messageObj => alert(messageObj.error))
+        resp.json().then(messageObj => setNotif(messageObj.error))
       }
     })
 }
@@ -62,14 +66,31 @@ const handleSignup = (e, formData) => {
             setUser(userObj)
             })
         } else {
-          response.json().then(messageObj => alert(messageObj.errors))
+          response.json().then(messageObj => setNotif(messageObj.errors))
         }
       })
       // .catch(error => alert(error)) Dont need this line, right?
   }
+
+  const handleLogout = () => {
+    fetch("/logout", {
+      method: "DELETE",
+    })
+      .then((r) => { 
+        if (r.status === 204) {
+          setNotif("Successfully logged out ")
+          setUser(null)
+          navigate("/")
+        } else {
+          r.json()
+          .then(err => setNotif(err))
+        }        
+      }) 
+    }
+  
   
   return (
-    <UserContext.Provider value={{user, setUser, handleLogin, handleSignup}}>
+    <UserContext.Provider value={{user, setUser, handleLogin, handleSignup, handleLogout}}>
         {children}
     </UserContext.Provider>
 )
