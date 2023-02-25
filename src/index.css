@@ -28,9 +28,25 @@ body { min-height: 100vh;
 /* … */
 
 .journal-container{
-  text-align: center;
-  min-width: 100%;
+  background-color: rgb(228, 195, 145);
+  height: 100vh;
 }
+
+.journal-left{
+  display: inline-block;
+  background-image: linear-gradient(80deg, rgb(247, 215, 168) , rgb(216, 176, 115), rgb(128, 103, 67), rgb(41, 36, 19));
+  height: 100%;
+  width: 50%;
+}
+
+.journal-right{
+  display: inline-block;
+  /* float:right; */
+  background-image: linear-gradient(90deg,rgb(41, 36, 19), rgb(128, 103, 67), rgb(216, 176, 115), rgb(233, 209, 173));
+  height: 100%;
+  width: 50%;
+}
+
 
 /* || Sign up and Login */
 
