@@ -1,20 +1,35 @@
 import { Link, useNavigate } from 'react-router-dom'
+import { useState, useContext } from 'react'
+import { UserContext } from '../context/UserContext';
 
 
 const Signup = ({setToggleAuth}) => {
+  const {handleSignup} = useContext(UserContext)
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    password_confirmation: "",
+    character_name: ""
+  });
 
-  const navigate = useNavigate();
+  const handleChange = ({target: {name, value}}) => {
+      setFormData(currentUser => ({
+          ...currentUser,
+          [name]: value
+      }))
+  }
+  // const navigate = useNavigate();
 
   return (
     <div>
-      <form>
+       <form onSubmit={(e) => handleSignup(e, formData)}>
         <label>Email</label><br/>
         <input
           name="email"
           type="text"
           placeholder="johndoe"
-          // onChange={handleChange}
-          // value={formData.email}
+          onChange={handleChange}
+          value={formData.email}
         >
         </input>
       <br/>
@@ -23,8 +38,8 @@ const Signup = ({setToggleAuth}) => {
           name="password"
           type="password"
           placeholder="password"
-          // onChange={handleChange}
-          // value={formData.email}
+          onChange={handleChange}
+          value={formData.password}
         >
         </input>
         <br/>
@@ -33,8 +48,8 @@ const Signup = ({setToggleAuth}) => {
           name="password_confirmation"
           type="password"
           placeholder="password"
-          // onChange={handleChange}
-          // value={formData.email}
+          onChange={handleChange}
+          value={formData.password_confirmation}
         >
         </input>
         <br/>
@@ -44,8 +59,8 @@ const Signup = ({setToggleAuth}) => {
           name="character_name"
           type="test"
           placeholder="Name"
-          // onChange={handleChange}
-          // value={formData.email}
+          onChange={handleChange}
+          value={formData.character_name}
         >
         </input>
         <br/>

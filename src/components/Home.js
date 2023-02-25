@@ -1,8 +1,16 @@
-import React from 'react'
+import GameNav from "./GameNav"
 
 const Home = () => {
   return (
-    <div>This is the main view of the game. Computer to your right and view of library in front of you. Basically will have its own nav bar</div>
+    // <div className="site-main">
+    //   <img className="background-img" src={process.env.PUBLIC_URL+"/ugh.jpg"} alt="books"/>
+    // </div>
+    
+
+
+    <div className="home-container">
+       <img className="home-view" src={process.env.PUBLIC_URL+"/ugh.jpg"} alt="viewfromdesk"/>
+    </div>
   )
 }
 

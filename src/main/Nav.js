@@ -1,8 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom'
-import { useState, useContext } from 'react'
+// import { useState, useContext } from 'react'
 
 const Nav = () => {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
   return (
     <div className="main-nav">

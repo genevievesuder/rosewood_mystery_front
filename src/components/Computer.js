@@ -5,8 +5,23 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import HomeIcon from '@mui/icons-material/Home';
 import PrintIcon from '@mui/icons-material/Print';
 import CoPresentIcon from '@mui/icons-material/CoPresent';
-const Computer = () => {
+import { useState, useContext, useEffect } from 'react'
+import { UserContext } from '../context/UserContext';
 
+const Computer = () => {
+  const {user} = useContext(UserContext)
+  const [books, setBooks] = useState([])
+
+  useEffect(() => {
+    fetch("/books")
+     .then(res => res.json())
+     .then(setBooks)
+     .catch(err => alert(err))
+  }, []);
+
+const mappedBooks = books.map(book => <DbBooks {...book} key={book.id}/>);
+
+  if (!user) return <h1>...loading</h1>
 return (
   <div className="monitor-container">
       <div className="software-name"><span>Rosewood Public Library</span></div>
@@ -18,6 +33,7 @@ return (
         <CoPresentIcon className="toolbar-buttons"></CoPresentIcon>
         <PrintIcon className="toolbar-buttons"></PrintIcon>
         </span>
+        <span style={{float:"right"}}>Signed in as {user.character_name}</span>
       </div>
       {/* Add onclick to those^^ */}
     <div className="database-container">
@@ -53,7 +69,7 @@ return (
                <img className="book-img" src="https://marketplace.canva.com/EAFKA0RgDtw/1/0/1003w/canva-brown-and-orange-elegant-simple-young-adult-fantasy-book-cover-Qb8uSVdJDzw.jpg" alt="book cover"/>
             </div>
             <div className="db-col-2">
-              <DbBooks/>
+              {mappedBooks}
             </div>
         </div>
     </div>

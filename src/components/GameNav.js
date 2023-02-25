@@ -5,12 +5,13 @@ const GameNav = () => {
     const navigate = useNavigate()
 
   return (
-    <div className="game-nav"> This is the games navigation where you can go to different areas of the game
-        <Link to="/">Exit to Main Menu</Link>
+    <div className="game-nav">
+        <Link className="game-nav-link" to="/library">☜ Library</Link>
+        <Link className="game-nav-link" to="/home">Desk</Link>
+        <Link className="game-nav-link" to="/computer">Computer</Link>
+        <Link className="game-nav-link" to="/journal">Journal</Link>
+        <Link className="game-nav-link" to="/">Exit to Main Menu ☞</Link>
         {/* Will be logout^^ */}
-        <Link to="/home">Desk</Link>
-        <Link to="/computer">Computer</Link>
-        {/* <Link to="/">Blah</Link> */}
     </div>
   )
 }
