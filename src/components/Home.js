@@ -8,7 +8,7 @@ const Home = () => {
   <>
     <div onClick={() => navigate("/computer")} className="box"></div>
     <div className="home-container">
-       <img className="home-view" src={process.env.PUBLIC_URL+"/ugh.jpg"} alt="viewfromdesk"/>
+       <img className="home-view" src={process.env.PUBLIC_URL+"/better.png"} alt="viewfromdesk"/>
     </div>
   </>
   )

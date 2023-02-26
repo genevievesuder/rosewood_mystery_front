@@ -17,7 +17,7 @@ import Notification from './main/Notification';
 import MembersDb from './components/MembersDb';
 import Settings from './components/Settings';
 import Help from './components/Help';
-
+import Exit from './main/Exit';
 
 
 function App() {
@@ -42,6 +42,7 @@ function App() {
           <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<Signup/>} />
           <Route path="/journal" element={<Journal/>} />
+          <Route path="/exit" element={<Exit/>} />
         </Routes>
     </div>
   );

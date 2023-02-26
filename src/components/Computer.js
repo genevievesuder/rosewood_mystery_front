@@ -28,7 +28,7 @@ const mappedBooks = books.map(book => <DbBooks {...book} key={book.id}/>);
   if (!user) return <h1>...loading</h1>
 return (
   <div className="monitor-container">
-      <div className="software-name"><span>Rosewood Public Library</span></div>
+      <div className="software-name"><span>Rosewood Public Library Database</span></div>
       <div className="monitor-toolbar">
         <span>
         <HelpOutlineIcon onClick={() => navigate("/help")}  className="toolbar-buttons"></HelpOutlineIcon>
