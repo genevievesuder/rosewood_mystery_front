@@ -30,7 +30,7 @@ const handleChange = ({target: {name, value}}) => {
       className="signup-input"
         name="email"
         type="text"
-        placeholder="johndoe"
+        // placeholder="johndoe"
         onChange={handleChange}
         value={formData.email}
       >
@@ -41,7 +41,7 @@ const handleChange = ({target: {name, value}}) => {
       className="signup-input"
         name="password"
         type="password"
-        placeholder="password"
+        // placeholder="password"
         onChange={handleChange}
         value={formData.password}
       >

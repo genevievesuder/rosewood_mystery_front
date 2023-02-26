@@ -30,7 +30,7 @@ const Signup = ({setToggleAuth}) => {
           className="signup-input"
           name="email"
           type="text"
-          placeholder="johndoe"
+          // placeholder="johndoe"
           onChange={handleChange}
           value={formData.email}
         >
@@ -41,7 +41,7 @@ const Signup = ({setToggleAuth}) => {
           className="signup-input"
           name="password"
           type="password"
-          placeholder="password"
+          // placeholder="password"
           onChange={handleChange}
           value={formData.password}
         >
@@ -64,13 +64,13 @@ const Signup = ({setToggleAuth}) => {
           className="signup-input"
           name="character_name"
           type="test"
-          placeholder="Name"
+          placeholder="Keri S. Reader"
           onChange={handleChange}
           value={formData.character_name}
         >
         </input>
         <br/>
-      <button type="submit">Sign up</button>
+      <button className="buttons" type="submit">Sign up</button>
       </form>
       <br/>
       <label>Or</label>

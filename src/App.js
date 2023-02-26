@@ -19,7 +19,6 @@ import Settings from './components/Settings';
 import Help from './components/Help';
 import Exit from './main/Exit';
 
-
 function App() {
   const {user} = useContext(UserContext)
 

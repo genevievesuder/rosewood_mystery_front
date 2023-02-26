@@ -1,13 +1,13 @@
 import { createContext, useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NotifContext } from '../context/NotifContext';
-
+import { ViewContext } from './ViewContext';
 
 
 const UserContext = createContext()
 
 const UserProvider = ({children}) => {
-
+const {view, setView} = useContext(ViewContext)
 const {notif, setNotif} = useContext(NotifContext)
 const navigate = useNavigate()
   const [user, setUser] = useState(null);
@@ -80,6 +80,7 @@ const handleSignup = (e, formData) => {
         if (r.status === 204) {
           setNotif("Successfully logged out ")
           setUser(null)
+          // setView("main")
           navigate("/")
         } else {
           r.json()

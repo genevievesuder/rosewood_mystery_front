@@ -8,12 +8,12 @@ import CoPresentIcon from '@mui/icons-material/CoPresent';
 import { useState, useContext, useEffect } from 'react'
 import { UserContext } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
-
-
+import { TriggerContext } from '../context/TriggerContext';
 
 const Computer = () => {
   const navigate = useNavigate()
   const {user} = useContext(UserContext)
+  const {trigger1, triggerNpc1} = useContext(TriggerContext)
   const [books, setBooks] = useState([])
 
   useEffect(() => {
@@ -35,7 +35,11 @@ return (
         <PeopleAltIcon onClick={() => navigate("/members")} className="toolbar-buttons"></PeopleAltIcon>
         <HomeIcon onClick={() => navigate("/computer")} className="toolbar-buttons"></HomeIcon>
         <CoPresentIcon onClick={() => navigate("/settings")} className="toolbar-buttons"></CoPresentIcon>
-        <PrintIcon className="toolbar-buttons"></PrintIcon>
+        { !trigger1 ? (
+        <PrintIcon onClick={triggerNpc1} className="toolbar-buttons"></PrintIcon>
+         ) : ( 
+        <PrintIcon className="toolbar-buttons"></PrintIcon> 
+        )}
         </span>
         <span style={{float:"right"}}>Welcome, {user.character_name}</span>
       </div>
