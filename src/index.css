@@ -20,6 +20,119 @@ font-family: 'Special Elite', cursive;
 
 /* … */
 
+/* .game-nav{ */
+  /* z-index: 9999;
+  top: 0;
+  background-color: white;
+  text-align: center;
+  font-size: 18px; */
+  /* z-index: 1000;
+  font-family: 'Nanum Myeongjo', serif;
+  background-color:#490707; */
+  /* position:fixed;   */
+  /* z-index:1; */
+  /* width:100%;
+  max-height:50px;
+  text-align:center;
+  vertical-align:middle; */
+  /* line-height:50px; */
+  /* top:0px;
+  border: 15px solid rgb(82, 30, 30);
+  border-style: ridge;
+  display:flex; */
+/* } */
+
+.back-button{
+  z-index: 9999;
+  top: 10;
+  position:fixed;
+  display:flex;
+  margin-left: 10px;
+}
+.back{
+  font-size: 50px;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.822);
+  border: none;
+}
+.back:hover{
+  cursor: pointer;
+}
+.back:active{
+  margin-left: -3px;
+}
+
+.ll1{
+  background-color: transparent;
+  top: 68%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
+  z-index: 9999;
+  border: 1px solid rgb(255, 0, 68);
+  height:4vh;
+}
+.ll1:hover{
+  cursor:pointer;
+}
+.ll2:hover{
+  cursor:pointer;
+}
+.ll3:hover{
+  cursor:pointer;
+}
+.ll2{
+  background-color: transparent;
+  top: 46%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
+  z-index: 9999;
+  border: 1px solid rgb(255, 0, 68);
+  height:4vh;
+}
+.ll3{
+  background-color: transparent;
+  top: 38%;
+  left: 24%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
+  z-index: 9999;
+  border: 1px solid rgb(255, 0, 68);
+  height:4vh;
+}
+
+.clue-click-div{
+  background-color:#ac9298;
+  border: 20px solid rgb(104, 104, 115);
+  border-style:ridge;
+  min-height: 70vh;
+  max-width: 50vw;
+  max-height: 70vh;
+  min-width: 50vw;
+  margin:auto;
+  margin-top: 7vh;
+}
+
+.clue-container{
+  text-align: center;
+  margin:auto;
+  margin-top: 3vh;
+  min-height: 64vh;
+  max-width: 90%;
+  background-color: rgb(243, 221, 225);
+}
+
+.clue-back-btn{
+  background-color: white;
+  float: left;
+  border: 10px solid rgb(53, 12, 23);
+}
+
+
 .buttons{
   background-color: #ab969e;
   border-radius: 2px;
@@ -28,14 +141,136 @@ font-family: 'Special Elite', cursive;
   font-weight: bold;
   padding: 4px;
   margin: 3px;
+  /* align-self: center; */
 }
 .buttons:hover{
   background-color: #a57487;
 }
 .buttons:active {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
   transform: translateY(4px);
+}
+
+.library-left-container{
+  display: flex;
+  min-width:100vw;
+  max-width: 100vw;
+  min-height: 90vh;
+  max-height: 90vh;
+  overflow: hidden;
+  background-color: #1a0505;
+  text-align: center;
+}
+
+/* LIB RIGHT */
+.lr1{
+  background-color: transparent;
+  top: 38%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
+  z-index: 9999;
+  border: 1px solid rgb(255, 0, 68);
+  height:4vh;
+}
+.lr1:hover{
+  cursor:pointer;
+}
+.lr2:hover{
+  cursor:pointer;
+}
+.lr3:hover{
+  cursor:pointer;
+}
+.lr2{
+  background-color: transparent;
+  top: 70%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
+  z-index: 9999;
+  border: 1px solid rgb(255, 0, 68);
+  height:4vh;
+}
+.lr3{
+  background-color: transparent;
+  top: 58%;
+  left: 44%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
+  z-index: 9999;
+  border: 1px solid rgb(255, 0, 68);
+  height:4vh;
+}
+
+
+
+/* 
+LIB FORWARD */
+
+
+.lf1{
+  background-color: transparent;
+  top: 63%;
+  text-shadow: 2px 2px 4px #ff1919;
+  left: 43%;
+  color: rgb(209, 208, 202);
+  font-size: 50px;
+  width: 5vw;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
+  z-index: 9999;
+  border: transparent;
+  height:5vh;
+}
+.lf1:hover{
+  color: white;
+  font-size: 70px;
+  cursor:pointer;
+}
+.lf2:hover{
+  cursor:pointer;
+}
+.lf3:hover{
+  cursor:pointer;
+}
+.lf2{
+  background-color: transparent;
+  top: 79%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
+  z-index: 9999;
+  border: 1px solid rgb(255, 0, 68);
+  height:17vh;
+  width: 12vw;
+}
+.lf3{
+  background-color: transparent;
+  top: 28%;
+  left: 30%;
+  width: 7vw;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
+  z-index: 9999;
+  border: 1px solid rgb(255, 0, 68);
+  height:6vh;
+}
+
+
+.npcol{
+  margin:auto;
+  /* padding: 50px; */
+  width:100%;
+
+  /* z-index: 2000; */
+  /* width: 3vw; */
 }
 
 /* || Notifications */
@@ -48,10 +283,77 @@ font-family: 'Special Elite', cursive;
   text-align: center;
   position: absolute;
   z-index: 9999;
-  border: 3px solid rgb(255, 0, 68);
+  border: 10px solid rgb(53, 12, 23);
 }
 
+
+
+
+
 /* … */
+
+/* …FIRST CLUE */
+
+.sticky-note{
+width: 7vw;
+height: 10vh;
+top: 55%;
+left: 66%;
+transform: translate(-50%, -50%);
+text-align: center;
+position: absolute;
+z-index: 1000;
+}
+.sticky-note:hover{
+  cursor: pointer;
+}
+
+.first-clue{
+  text-align: center;
+  height:100vh;
+  max-width: 70%;
+  margin:auto;
+  background-color: #dbcb64;
+  padding: 15px;
+}
+
+.s1{
+  font-family: 'Averia Serif Libre', cursive;
+  font-size: 25px;
+}
+
+.gameplay-container{
+  font-family: 'Averia Serif Libre', cursive;
+  font-size: 20px; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.start{
+  background-color: #7d4c55d3;
+  border: 10px solid rgb(148, 86, 86);
+  border-style: ridge;
+  font-family: 'Averia Serif Libre', cursive;
+  font-size: 20px; 
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute; 
+}
+.start:hover{
+cursor: pointer;
+}
+.start:active{
+    font-weight: bold;
+}
+
+
+/* … */
+
+
+
 
 .journal-container{
   margin: auto;
@@ -451,7 +753,7 @@ font-family: 'Special Elite', cursive;
 
 .lib-nav-left{
   margin-top: 200px;
-  filter:brightness(35%);
+  filter:brightness(65%);
   /* top: 500%; */
   left: 23%;
   transform: translate(-50%, -50%) rotate(180deg);
@@ -476,9 +778,9 @@ font-family: 'Special Elite', cursive;
 }
 
 .lib-nav-for{
-  filter:brightness(35%);
-  top: 70%;
-  left: 50%;
+  filter:brightness(85%);
+  top: 76%;
+  left: 50.5%;
   transform: translate(-50%, -50%) rotate(-90deg);
   text-align: center;
   position: absolute;
@@ -487,9 +789,8 @@ font-family: 'Special Elite', cursive;
 }
 
 .lib-nav-for:hover{
-  filter:brightness(35%);
-  top: 69%;
-  left: 50%;
+  top: 74%;
+  left: 50.5%;
   transform: translate(-50%, -50%) rotate(-90deg);
   text-align: center;
   position: absolute;
@@ -499,7 +800,7 @@ font-family: 'Special Elite', cursive;
 
 .lib-nav-right{
   margin-top: 200px;
-  filter:brightness(35%);
+  filter:brightness(65%);
   top: 50%;
   left: 77%;
   transform: translate(-50%, -50%);
@@ -539,11 +840,11 @@ font-family: 'Special Elite', cursive;
 }
 
 .library-view{
-  filter:brightness(75%);
+  /* filter:brightness(75%); */
   margin: auto;
   width: 60%;
-  border: 10px solid rgb(52, 45, 45);
-  border-style: ridge;
+  /* border: 10px solid rgb(52, 45, 45);
+  border-style: ridge; */
 }
 
 /* … */
@@ -693,10 +994,57 @@ box-shadow: 4px 4px;
   height: 100vh;
 }
 
+/* Members tab */
+
 .members-container{
   background-color: white;
   height: 100vh;
+  overflow: scroll;
+  
+  /* padding: 10px; */
 }
+
+.members-header{
+  background-color: #690969;
+  /* min-height: 20vh; */
+  display: flex;
+  flex-wrap: nowrap;
+  /* align-items: center; */
+}
+
+.member-search{
+  float: bottom;
+  height: 20%;
+  /* display: inline-block; */
+}
+
+.search-member{
+  height: 20%;
+}
+
+.new-member-form{
+  /* max-width: 50%; */
+  background-color: pink;
+
+  /* display: inline-block; */
+  /* float:right; */
+}
+
+.members-list{
+  /* display: grid; Columns for book attributes */
+  width:100%;
+  display: grid;
+  grid-template-columns:25vw 25vw 43vw 7vw;
+  /* grid-template-rows: 100vh; */
+  background-color: rgba(128, 128, 128, 0.169);
+}
+
+.ml{
+  border: 1px solid rgba(0, 0, 0, 0.443);
+}
+
+
+/* Members tab */
 
 .settings-container{
   background-color: white;

@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import './components/puzzles/puzzle.css';
 import App from './App';
 import { BrowserRouter } from "react-router-dom"
 import { TriggerProvider } from './context/TriggerContext';
 import { UserProvider } from './context/UserContext';
+// import { ClueProvider } from './context/ClueContext';
 import { NotifProvider } from './context/NotifContext';
 import { ViewProvider } from './context/ViewContext';
+import { MemberProvider } from './context/MemberContext';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,9 +18,13 @@ root.render(
     <NotifProvider>
       <ViewProvider>
         <TriggerProvider>
-          <UserProvider>
-            <App />
-          </UserProvider>
+            <MemberProvider>
+              <UserProvider>
+                {/* <ClueProvider> */}
+                  <App />
+                {/* </ClueProvider> */}
+              </UserProvider>
+            </MemberProvider>
         </TriggerProvider>
       </ViewProvider>
     </NotifProvider>

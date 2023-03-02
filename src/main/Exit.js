@@ -11,8 +11,8 @@ const Exit = () => {
     <div className="are-you-sure-container">
         <div className="logout-box"> 
         <span>Are you sure you want to exit?</span><br></br>
-        <button onClick={handleLogout}>Log out</button>
-        <button onClick={() => navigate(-1)}>Keep playing</button>
+        <button className="buttons" onClick={handleLogout}>Log out</button>
+        <button className="buttons" onClick={() => navigate(-1)}>Keep playing</button>
         </div>
     </div>
 

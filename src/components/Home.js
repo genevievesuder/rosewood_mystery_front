@@ -5,29 +5,36 @@ import { UserContext } from '../context/UserContext';
 import { TriggerContext } from '../context/TriggerContext';
 import { ViewContext } from "../context/ViewContext";
 import Dialogue from "./Dialogue";
+import FirstClue from "./FirstClue";
+import { NotifContext } from "../context/NotifContext";
+
 
 const Home = () => {
   const [libraryCard, setLibraryCard] = useState(false)
   const {view, setView} = useContext(ViewContext)
-  // const {user} = useContext(UserContext)
+  const {user} = useContext(UserContext)
+  const {notif, setNotif} = useContext(NotifContext)
   // const {trigger1, triggerNpc1} = useContext(TriggerContext)
-
-
-const handleShowCard = () => {
-  setLibraryCard(currentState => !currentState)
-}
-
   const navigate = useNavigate()
+
+
+  const handleShowCard = () => {
+    setLibraryCard(currentState => !currentState)
+  }
+
+  if (!user) return <h1>...loading</h1>
+  if (user.clues.length === 0) return <FirstClue user_id={user.id}/>
+
   return (
   <>
-   { view === "main" ? (
+  {/* {user.clues === [] ? <FirstClue /> : null } */}
   <div>
     <div onClick={() => navigate("/computer")} className="box"></div>
     <div className="home-container">
-       <img className="home-view" src={process.env.PUBLIC_URL+"/better.png"} alt="viewfromdesk"/>
+       <img className="home-view" src={process.env.PUBLIC_URL+"/desk.png"} alt="viewfromdesk"/>
     </div>
   </div>
-   ) : null}
+ 
   { view === "npc1" ? (
     <div>
       <div className="npc-info-box">

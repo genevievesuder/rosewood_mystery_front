@@ -12,11 +12,6 @@ const GameNav = () => {
   const {notif, setNotif} = useContext(NotifContext)
   const {user, handleLogout} = useContext(UserContext)
   const navigate = useNavigate()
-  const [areYouSure, setAreYouSure] = useState(false)
-
-  // const handleGameExit = () => {
-  //   setAreYouSure(true)
-  // }
 
   return (
     <div className="game-nav">

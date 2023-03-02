@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { NotifContext } from '../context/NotifContext';
+import { NotifContext } from './/NotifContext';
 import { ViewContext } from './ViewContext';
 
 
@@ -19,6 +19,7 @@ const navigate = useNavigate()
           if (res.ok) {
               res.json()
               .then((user) => {
+                console.log(user)
                   setUser(user);
               });
           }
@@ -41,6 +42,7 @@ const navigate = useNavigate()
       if (resp.ok) {
         resp.json().then(userObj => {
           setUser(userObj)
+          // setView("main")
         })
       } else {
         resp.json().then(messageObj => setNotif(messageObj.error))
@@ -80,7 +82,6 @@ const handleSignup = (e, formData) => {
         if (r.status === 204) {
           setNotif("Successfully logged out ")
           setUser(null)
-          // setView("main")
           navigate("/")
         } else {
           r.json()

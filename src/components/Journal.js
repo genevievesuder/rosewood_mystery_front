@@ -1,10 +1,13 @@
 import { useState, useContext, useEffect } from 'react'
 import { UserContext } from '../context/UserContext';
+import JournalClues from './JournalClues';
 
 const Journal = () => {
-
+  const {user} = useContext(UserContext)
+  console.log(user)
 const [clue1, setClue1] = useState(false)
 //Will do w each clue and hint
+
 
   return (
     <div className="journal-container">
@@ -22,17 +25,7 @@ const [clue1, setClue1] = useState(false)
         </div>
       <div className="journal-clues-right">
           <span className="journal-clue">This is a clue.. maybe this will lead you in the right direction</span><br/>❧<br/>
-          <span className="journal-clue">This is another clue. I wospand say its best to look towards art section</span><br/>❧<br/>
-          <span className="journal-clue">This is a clue.. maybe this will lead you in the right direction</span><br/>❧<br/>
-          <span className="journal-clue">This is another clue. I wospand say its best to look towards art section</span><br/>❧<br/>
-          <span className="journal-clue">This is a clue.. maybe this will lead you in the right direction</span><br/>❧<br/>
-          <span className="journal-clue">This is another clue. I wospand say its best to look towards art section</span><br/>❧<br/>
-          <span className="journal-clue">This is a clue.. maybe this will lead you in the right direction</span><br/>❧<br/>
-          <span className="journal-clue">This is another clue. I wospand say its best to look towards art section</span><br/>❧<br/>
-          <span className="journal-clue">This is a clue.. maybe this will lead you in the right direction</span><br/>❧<br/>
-          <span className="journal-clue">This is another clue. I wospand say its best to look towards art section</span><br/>❧<br/>
-          <span className="journal-clue">This is a clue.. maybe this will lead you in the right direction</span><br/>❧<br/>
-          <span className="journal-clue">This is another clue. I wospand say its best to look towards art section</span><br/>❧<br/>
+      <JournalClues clues={user.clues}/>
       </div>
        <div className="journal-left"></div>
        <div className="journal-right"></div>

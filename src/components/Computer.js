@@ -46,13 +46,7 @@ return (
       {/* Add onclick to those^^ */}
     <div className="database-container">
       <div className="db-toolbar">
-          <input
-            className="db-search"
-            value=""
-            placeholder="Search"
-            // onChange={(e) => setInput(e.target.value)}
-          />
-          <button className="search-btn">🔎</button>
+          
 {/* Add onClick function to button --> onClick={searchDatabase} */}
         <select className="db-filter">
           <option value="">Filter option 1</option>

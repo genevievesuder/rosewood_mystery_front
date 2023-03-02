@@ -1,0 +1,73 @@
+/* body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    background: #111;
+    color: white;
+  } */
+
+  @import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&family=Berkshire+Swash&family=Caveat:wght@700&family=La+Belle+Aurore&family=Libre+Baskerville:ital@1&family=Nanum+Myeongjo&family=Special+Elite&display=swap');
+  /* code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace; font-family: 'Libre Baskerville', serif;
+  } */
+  .slide-puzzle {
+    background-color: white;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+  }
+  h1 {
+    margin: 0;
+  }
+  .board {
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5ac6baefc258b4d964f724b3/1551310651460-7CBABVE6T3IGYYTHSRMN/BR01.jpg?format=1000w");
+    position: relative;
+    padding: 0;
+    border: 20px solid rgb(81, 44, 11);
+    border-style: ridge;
+    background-color: #433213;
+    /* border-image: url("https://thumbs.dreamstime.com/b/old-copper-bronze-metal-texture-plate-111844255.jpg") 30 round; */
+  }
+  .tile {
+    filter: brightness(110%);
+    font-family: 'Libre Baskerville', serif;
+    background-image: url("https://t4.ftcdn.net/jpg/04/74/53/55/360_F_474535566_6dlOrZVvfOQFepXDOtdo8RU8V4QoKMYZ.jpg");
+    box-shadow: inset 0 0 10px #f8a100af;
+    color: rgb(38, 4, 4);
+    font-weight: bold;
+    position: absolute;
+    list-style: none;
+    /* background: #431b17; */
+    display: grid;
+    border: 1px solid rgb(35, 21, 21);
+    place-items: center;
+    font-size: 20px;
+  }
+
+  .puzzle-solved{
+    background-color: rgba(48, 68, 116, 0.511);
+    border: solid 10px rgb(79, 79, 103);
+    border-style:ridge;
+    min-height: 10vh;
+    min-width: 40vw;
+    text-align: center;
+    padding: 5px;
+  }
+
+  .puzzle-clue{
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: bold;
+    /* font-family: 'Special Elite', cursive; */
+    /* background-color: rgba(255, 255, 255, 0.616); */
+    padding: 5px;
+    text-shadow: rgb(148, 91, 219) 1px 0 10px;
+  }
+/* 
+  button {
+    display: block;
+  } */

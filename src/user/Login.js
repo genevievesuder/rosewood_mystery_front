@@ -47,7 +47,7 @@ const handleChange = ({target: {name, value}}) => {
       >
       </input>
       <br/>
-    <button type="submit">Login</button>
+    <button className="buttons" type="submit">Login</button>
     </form>
     <br/>
     <label>Don't have an account yet?</label>
