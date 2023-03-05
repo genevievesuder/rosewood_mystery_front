@@ -1,13 +1,13 @@
 import { createContext, useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NotifContext } from './/NotifContext';
-import { ViewContext } from './ViewContext';
+// import { ViewContext } from './ViewContext';
 
 
 const UserContext = createContext()
 
 const UserProvider = ({children}) => {
-const {view, setView} = useContext(ViewContext)
+// const {view, setView} = useContext(ViewContext)
 const {notif, setNotif} = useContext(NotifContext)
 const navigate = useNavigate()
   const [user, setUser] = useState(null);

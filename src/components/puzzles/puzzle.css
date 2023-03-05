@@ -16,10 +16,11 @@
       monospace; font-family: 'Libre Baskerville', serif;
   } */
   .slide-puzzle {
-    background-color: white;
+    background-color: rgb(37, 34, 32);
     display: grid;
     place-items: center;
-    height: 100vh;
+    min-width: 100%;
+    /* height: 100vh; */
   }
   h1 {
     margin: 0;
@@ -50,7 +51,7 @@
   }
 
   .puzzle-solved{
-    background-color: rgba(48, 68, 116, 0.511);
+    background-color: rgba(165, 166, 168, 0.511);
     border: solid 10px rgb(79, 79, 103);
     border-style:ridge;
     min-height: 10vh;
@@ -65,7 +66,7 @@
     /* font-family: 'Special Elite', cursive; */
     /* background-color: rgba(255, 255, 255, 0.616); */
     padding: 5px;
-    text-shadow: rgb(148, 91, 219) 1px 0 10px;
+    text-shadow: rgb(175, 156, 158) 1px 0 10px;
   }
 /* 
   button {

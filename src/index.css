@@ -18,6 +18,15 @@ font-family: 'Special Elite', cursive;
    */
 
 
+.main-img{
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
+}
+
 /* … */
 
 /* .game-nav{ */
@@ -110,7 +119,7 @@ font-family: 'Special Elite', cursive;
   border: 20px solid rgb(104, 104, 115);
   border-style:ridge;
   min-height: 70vh;
-  max-width: 50vw;
+  /* max-width: 50vw; */
   max-height: 70vh;
   min-width: 50vw;
   margin:auto;
@@ -124,6 +133,15 @@ font-family: 'Special Elite', cursive;
   min-height: 64vh;
   max-width: 90%;
   background-color: rgb(243, 221, 225);
+}
+
+.clue-container-sp{
+  text-align: center;
+  margin:auto;
+  margin-top: 3vh;
+  min-height: 64vh;
+  min-width: 100%;
+  background-color:  rgb(37, 34, 32);
 }
 
 .clue-back-btn{
@@ -165,14 +183,14 @@ font-family: 'Special Elite', cursive;
 /* LIB RIGHT */
 .lr1{
   background-color: transparent;
-  top: 38%;
-  left: 75%;
+  top: 79%;
+  left: 78%;
   transform: translate(-50%, -50%);
   text-align: center;
   position: absolute;
   z-index: 9999;
   border: 1px solid rgb(255, 0, 68);
-  height:4vh;
+  height:14vh;
 }
 .lr1:hover{
   cursor:pointer;
@@ -185,25 +203,25 @@ font-family: 'Special Elite', cursive;
 }
 .lr2{
   background-color: transparent;
-  top: 70%;
-  left: 25%;
+  top: 60%;
+  left: 55%;
   transform: translate(-50%, -50%);
   text-align: center;
   position: absolute;
   z-index: 9999;
   border: 1px solid rgb(255, 0, 68);
-  height:4vh;
+  height:10vh;
 }
 .lr3{
   background-color: transparent;
-  top: 58%;
-  left: 44%;
+  top: 30%;
+  left: 24%;
   transform: translate(-50%, -50%);
   text-align: center;
   position: absolute;
   z-index: 9999;
   border: 1px solid rgb(255, 0, 68);
-  height:4vh;
+  height:10vh;
 }
 
 
@@ -267,7 +285,7 @@ LIB FORWARD */
 .npcol{
   margin:auto;
   /* padding: 50px; */
-  width:100%;
+  max-width:100%;
 
   /* z-index: 2000; */
   /* width: 3vw; */
@@ -374,7 +392,17 @@ cursor: pointer;
 }
 
 .journal-clues-left{
-  
+  padding: 50px;
+  /* border: 2px solid black; */
+  width: 40vw;
+  height: 80vh;
+  top: 80%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
+  z-index: 9999;
+  overflow: auto;
 }
 
 .journal-clues-right{
@@ -508,10 +536,14 @@ cursor: pointer;
 /* || Header and Main Navigation */
 
 .site-main {
-  background-size: stretch;
-  min-width: 100%;
-  max-height: 90vh;
-  /* background-image: url("/mainsite.jpg") */
+  /* margin: auto;
+  background-color: rgba(255, 194, 245, 0.297);
+  background-size: fill;
+  width: 100%;
+  height: 90vh; 
+  background-image: url("https://media.istockphoto.com/id/1151358348/photo/bright-purple-leaves-top-view-minimalistic-background.jpg?b=1&s=170667a&w=0&k=20&c=T6FazTAXDnouaDtEGxHt25WvwqyMFSHQOAiXP2iuH6c="); */
+  /* min-width: 100%;
+  height: 90vh; */
 }
 
 .main-blur{
@@ -560,9 +592,9 @@ cursor: pointer;
   z-index: 2000;
   width: 13vw;
   filter: drop-shadow(5px 3px 2px #690969);
-  /* background-color: rgba(255, 255, 255, 0.053); */
+  background-color: rgb(255, 255, 255);
   /* backdrop-filter: blur(4px); */
-  /* border-radius: 5px; */
+  border-radius: 15px;
   width: 7vw;
 }
 
@@ -779,7 +811,7 @@ cursor: pointer;
 
 .lib-nav-for{
   filter:brightness(85%);
-  top: 76%;
+  top: 66%;
   left: 50.5%;
   transform: translate(-50%, -50%) rotate(-90deg);
   text-align: center;
@@ -789,7 +821,7 @@ cursor: pointer;
 }
 
 .lib-nav-for:hover{
-  top: 74%;
+  top: 64%;
   left: 50.5%;
   transform: translate(-50%, -50%) rotate(-90deg);
   text-align: center;

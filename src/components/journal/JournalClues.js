@@ -2,12 +2,8 @@ import React from 'react'
 
 const JournalClues = ({clues}) => {
 
-  const userClues = clues.map(clue => {
-    return (
-    <>
-  <span className="journal-clue">{clue.content}</span><br/>❧<br/>
-    </>
-  )})
+  const userClues = clues.map(clue => <span key={clue.id} className="journal-clue">{clue.content}<br/>❧<br/></span>)
+
 
   return (
     <div>

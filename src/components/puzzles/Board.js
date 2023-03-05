@@ -3,9 +3,25 @@ import Tile from "./Tile";
 import { TILE_COUNT, GRID_SIZE, BOARD_SIZE } from "./constants"
 import { canSwap, shuffle, swap, isSolved } from "./helpers"
 import './puzzle.css';
+import Clue from '../Clue'
+import { UserContext } from '../../context/UserContext';
+import { useContext } from 'react'
+// import {useNavigate} from 'react-router-dom'
+import { NotifContext } from "../../context/NotifContext";
 
 
 function Board() {
+
+  const {notif, setNotif} = useContext(NotifContext)
+  const {user, setUser} = useContext(UserContext)
+
+
+  const handleClick = async (clue_id) => {
+      const resp = await Clue(clue_id)
+      console.log(resp)
+      !!resp.id ? setUser(resp) : setNotif(resp)
+  }
+
   const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
   const [isStarted, setIsStarted] = useState(false); //change back to false
   console.log('is started:', isStarted)
@@ -58,11 +74,20 @@ function Board() {
         ))}
       </ul> 
       {hasWon && isStarted && <div className="puzzle-solved">
-        <p className="puzzle-clue">Puzzle solved. Here is the clue: kjdkaj fdl jfdlka jdlkaj sd lajsdl kjsad lkasjd asjdl kasjd. kajdksd lskjdlsdk doksdsd.</p>
+        { user.clues.length === 4 ? (
+        <>
+        <p className="puzzle-clue">Puzzle solved. Return an angry sad note from Lillian</p><br/>
+        <button onClick={() => handleClick(5)}className="buttons">x</button>
+        </>
+        ) : (
+          <>
+          <p className="puzzle-clue">Puzzle solved!</p><br/>
+          </>
+        )}
         </div>}
       {!isStarted ?
-        (<button className="buttons" onClick={() => handleStartClick()}>Start game</button>) :
-        (<button className="buttons" onClick={() => handleShuffleClick()}>Restart game</button>)}
+        (<button className="buttons" onClick={() => handleStartClick()}>Start</button>) :
+        (<button className="buttons" onClick={() => handleShuffleClick()}>↻</button>)}
     </>
   );
 }

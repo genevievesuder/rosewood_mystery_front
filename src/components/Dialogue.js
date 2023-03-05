@@ -2,11 +2,7 @@ import {useState} from 'react'
 import { TypeAnimation } from 'react-type-animation';
 
 const Dialogue = () => {
-const [repeat, setRepeat] = useState("0");
 
-const handleRepeat = () => {
-    setRepeat("1")
-}
 
   return (
     <div className="dialogue-box">
@@ -28,7 +24,6 @@ const handleRepeat = () => {
       style={{ fontSize: '2em' }}
       omitDeletionAnimation={true}
     />
-    {/* <button onClick={handleRepeat}>Repeat</button> */}
     </div>
   )
 }

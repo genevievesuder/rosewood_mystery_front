@@ -1,6 +1,7 @@
 import { useState, useContext, useEffect } from 'react'
-import { UserContext } from '../context/UserContext';
+import { UserContext } from '../../context/UserContext';
 import JournalClues from './JournalClues';
+import JournalHints from './JournalHints';
 
 const Journal = () => {
   const {user} = useContext(UserContext)
@@ -9,6 +10,7 @@ const [clue1, setClue1] = useState(false)
 //Will do w each clue and hint
 
 
+if (!user) return <h1>...loading</h1>
   return (
     <div className="journal-container">
       <img className="pen" src={process.env.PUBLIC_URL+"/pen.png"} alt="pen"/>
@@ -21,10 +23,11 @@ const [clue1, setClue1] = useState(false)
     </div>
 
         <div className="journal-clues-left">
-          {/* add stuff? */}
+        <span className="journal-clue">Hints</span><br/>❧<br/>
+      <JournalHints hints={user.hints}/>
         </div>
       <div className="journal-clues-right">
-          <span className="journal-clue">This is a clue.. maybe this will lead you in the right direction</span><br/>❧<br/>
+          <span className="journal-clue">Clues</span><br/>❧<br/>
       <JournalClues clues={user.clues}/>
       </div>
        <div className="journal-left"></div>

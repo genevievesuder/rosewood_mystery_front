@@ -1,14 +1,33 @@
-import {useState} from 'react'
-import BackBtn from '../main/BackBtn'
+import BackBtn from '../../main/BackBtn'
+import SlidingPuzzle from '../puzzles/SlidingPuzzle'
+import Clue from '../Clue'
+import { UserContext } from '../../context/UserContext';
+import { useState, useContext } from 'react'
+// import {useNavigate} from 'react-router-dom'
+import { NotifContext } from "../../context/NotifContext";
 
 
 const LibraryRight = () => {
+
+    const {notif, setNotif} = useContext(NotifContext)
+    const {user, setUser} = useContext(UserContext)
+  
+
     const [openClue1, setOpenClue1] = useState(false)
     const [openClue2, setOpenClue2] = useState(false)
     const [openClue3, setOpenClue3] = useState(false)
 
+    const handleClick = async (clue_id) => {
+        const resp = await Clue(clue_id)
+        console.log(resp)
+        !!resp.id ? setUser(resp) : setNotif(resp)
+    }
+
 const open1 = () => {
     setOpenClue1(current => !current)
+    if (!openClue1) {
+        handleClick(3)
+    }
 }
 const open2 = () => {
     setOpenClue2(current => !current)
@@ -17,25 +36,25 @@ const open3 = () => {
     setOpenClue3(current => !current)
 }
 
-if (openClue1 === true) {
+if (openClue1) {
     return (
     <div className="clue-click-div">
      <button onClick={open1} className="clue-back-btn">x</button>
       <div className="clue-container">
-       <p>welcome to Clue 1!!!!!!</p>
+       <p>welcome to Clue 3!!!!!!</p>
       </div>
     </div>)
 }
-if (openClue2 === true) {
+if (openClue2) {
     return (
     <div className="clue-click-div">
      <button onClick={open2} className="clue-back-btn">x</button>
-      <div className="clue-container">
-       <p>welcome to Clue 2!!!!!!</p>
+      <div className="clue-container-sp">
+       <SlidingPuzzle />
       </div>
     </div>)
 }
-if (openClue3 === true) {
+if (openClue3) {
     return (
     <div className="clue-click-div">
      <button onClick={open3} className="clue-back-btn">x</button>
@@ -49,8 +68,12 @@ if (openClue3 === true) {
   return (
     
     <div className="library-left-container">
+        { user.clues.length >= 2 ? (
         <button onClick={open1} className="lr1"></button>
+        ) : null}
+        { user.clues.length >= 3 ? (
         <button onClick={open2} className="lr2"></button>
+        ) : null}
         <button onClick={open3} className="lr3"></button>
             <BackBtn />
         <div className="lib-container">

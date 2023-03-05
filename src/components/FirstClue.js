@@ -13,8 +13,8 @@ const FirstClue = (user_id) => {
   const {user, setUser} = useContext(UserContext)
 
 
-const handleClick = () => {
-  const resp = Clue(user_id, 1)
+const handleClick = async () => {
+  const resp = await Clue(user.clues.length +1)
   console.log(resp)
   !!resp.id ? setUser(resp) : setNotif(resp)
 }

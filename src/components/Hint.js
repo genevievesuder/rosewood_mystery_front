@@ -4,15 +4,15 @@ import { useNavigate } from 'react-router-dom';
 // import { NotifContext } from '../context/NotifContext';
 import { UserContext } from '../context/UserContext';
 
-const Clue = async (clue_id) => {
+const Hint = async (hint_id) => {
     // const {notif, setNotif} = useContext(NotifContext)
     // const {user, setUser} = useContext(UserContext)
 
 try {
-  const resp = await fetch("/user_clues", {
+  const resp = await fetch("/user_hints", {
     method: 'POST', 
     headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({clue_id})
+    body: JSON.stringify({hint_id})
   })
     if (resp.status === 201){
       const data = await resp.json()
@@ -27,4 +27,4 @@ try {
 
   }
   
-export default Clue
+export default Hint

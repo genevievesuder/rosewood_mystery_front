@@ -1,25 +1,24 @@
 import { Route, Routes } from 'react-router-dom';
 import SiteMain from './main/SiteMain';
-import Computer from './components/Computer';
-import NotFound from './components/NotFound';
+import Computer from './components/computer/Computer';
+import NotFound from './main/NotFound';
 import Home from './components/Home';
-import Nav from './main/Nav';
-import GameNav from './components/GameNav';
+import GameNav from './main/GameNav';
 import Info from './main/Info';
 import PlayGame from './user/PlayGame';
 import Login from './user/Login';
 import Signup from './user/Signup';
 import { useState, useContext } from 'react'
 import { UserContext } from './context/UserContext';
-import Journal from './components/Journal';
-import LibraryEntry from './components/LibraryEntry';
-import LibraryLeft from './components/LibraryLeft';
-import LibraryRight from './components/LibraryRight';
-import LibraryFore from './components/LibraryFore';
+import Journal from './components/journal/Journal';
+import LibraryEntry from './components/library/LibraryEntry';
+import LibraryLeft from './components/library/LibraryLeft';
+import LibraryRight from './components/library/LibraryRight';
+import LibraryFore from './components/library/LibraryFore';
 import Notification from './main/Notification';
-import MembersDb from './components/MembersDb';
-import Settings from './components/Settings';
-import Help from './components/Help';
+import MembersDb from './components/computer/MembersDb';
+import Settings from './components/computer/Settings';
+import Help from './components/computer/Help';
 import Exit from './main/Exit';
 import FirstClue from './components/FirstClue';
 
@@ -31,7 +30,6 @@ function App() {
   return (
     <div className="App">
      <Notification />
-      {/* <Nav /> */}
       { user ? <GameNav /> : null }
   
         <Routes>

@@ -5,19 +5,33 @@ import HomeIcon from '@mui/icons-material/Home';
 import PrintIcon from '@mui/icons-material/Print';
 import CoPresentIcon from '@mui/icons-material/CoPresent';
 import { useState, useContext, useEffect } from 'react'
-import { UserContext } from '../context/UserContext';
-import { MemberContext } from '../context/MemberContext'
+import { UserContext } from '../../context/UserContext';
+// import { MemberContext } from '../context/MemberContext'
 import { useNavigate } from 'react-router-dom';
 import Members from './Members';
-import { NotifContext } from "../context/NotifContext";
+import { NotifContext } from "../../context/NotifContext";
 
 
 const MembersDb = () => {
 const {user} = useContext(UserContext)
-const {members} = useContext(MemberContext)
+// const {members} = useContext(MemberContext)
 const {notif, setNotif} = useContext(NotifContext)
 const navigate = useNavigate()
 
+const [members, setMembers] = useState([]);
+
+
+useEffect(() => {
+    fetch("/customers")
+    .then((res) => {
+        if (res.ok) {
+            res.json()
+            .then((customers) => {
+                setMembers(customers);
+            });
+        }
+    })
+}, []);
 
 // const [newPost, setNewPost] = useState({
 //   title: "",
