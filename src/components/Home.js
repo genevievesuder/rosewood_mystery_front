@@ -5,6 +5,8 @@ import FirstClue from "./FirstClue";
 import { NotifContext } from "../context/NotifContext";
 // import Dialogue from "./Dialogue";
 import Npc1 from "./Npc1";
+import Npc3 from "./Npc3";
+import Npc2 from "./Npc2";
 
 const Home = () => {
   // const [libraryCard, setLibraryCard] = useState(false)
@@ -20,6 +22,10 @@ const Home = () => {
   if (!user) return <h1>...loading</h1>
   if (user.clues.length === 0) return <FirstClue user_id={user.id}/>
   if (user.clues.length === 2 && user.hints.length === 0) return <Npc1 user_id={user.id}/>
+  if (user.clues.length === 4 && user.hints.length === 1) return <Npc3 user_id={user.id}/>
+  if (user.clues.length === 5 && user.hints.length === 2) return <Npc2 user_id={user.id}/>
+
+
 
   return (
   <div>

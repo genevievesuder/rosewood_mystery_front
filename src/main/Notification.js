@@ -18,7 +18,7 @@ const Notifications = () => {
   return (
     <div className="notification-banner">
       <span className="notification">{notif}</span>
-      <button onClick={() => setNotif("")}>x</button>
+      <button className='notif-btn'onClick={() => setNotif("")}>x</button>
     </div>
   )
     }

@@ -73,16 +73,16 @@ function Board() {
           />
         ))}
       </ul> 
-      {hasWon && isStarted && <div className="puzzle-solved">
+      {hasWon && isStarted && <div>
         { user.clues.length === 4 ? (
         <>
-        <div className="puzzle-clue-letter"><img className="poem" src={process.env.PUBLIC_URL+"/letter2.png"} alt="letter"/></div><br/>
-        <button onClick={() => handleClick(5)}className="buttons">x</button>
+        <div className="puzzle-clue-letter"><img src={process.env.PUBLIC_URL+"/letter2.png"} alt="letter"/></div><br/>
+        <button className="puzzle-button" onClick={() => handleClick(5)}>Collect clue</button>
         </>
         ) : (
-          <>
+          <div className="puzzle-solved">
           <p className="puzzle-clue">Puzzle solved!</p><br/>
-          </>
+          </div>
         )}
         </div>}
       {!isStarted ?

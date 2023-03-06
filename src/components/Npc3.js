@@ -15,9 +15,10 @@ const handleGiveHint = async (hint_id) => {
     console.log(resp)
     !!resp.id ? setUser(resp) : setNotif(resp)
     navigate("/home")
+    setNotif("You received a hint")
 }
 
-const dialogue = ["Excuse me", "How am I supposed to take reading selfies while it's freezing cold in here!?", "Well?", "Ugh. Just forget it, you probably don't even know how to use a thermostat.", "Whatever, I'm getting out of here. This library is so creepy anyway."];
+const dialogue = ["Hello! How are you today?", "Did I catch you at a bad time? You look busy, I can come back later!", "Alright then, thank you. Kind of an odd situation, but I just need to return this book.", "My library card? Funny story... I don't actually have an account here.", "I was tidying up my apartment and I found this book on my shelf.", "I have no idea how it got there, but I opened it up and saw the RPL stamp on it.. So, here I am! ...sounding like a crazy person.", "Anyway! Here you go, this belongs to you.", "Well, I guess I'll see ya next time a creepy old book mysteriously appears in my house!"];
 
 const [i, incrementIndex] = useState(0)
 const [text, setText] = useState(`${dialogue[i]}`);
@@ -33,7 +34,10 @@ function handleClick() {
 if (!user) return <h1>...loading</h1>
   return (      
       <div>
-        <button onClick={() => handleGiveHint(3)} className="buttons">x</button>
+        <button onClick={() => handleGiveHint(3)} className="npc-exit">x</button>
+        <div className="npc-name-box">
+          <h4 className="npc-name">Ian Bennett</h4>
+        </div>
         <div className="dialogue-box">
         <p className="dialogue">{text}</p>
         <button onClick={handleClick}>Next</button>

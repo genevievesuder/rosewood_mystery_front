@@ -39,27 +39,28 @@ const open3 = () => {
 
 const handleFlip = () => {
     setFlipImg(current => !current)
+    setNotif("Interesting..")
 }
 
 if (openClue1) {
     return (
     <div style={{textAlign:'center'}}>
-     <button onClick={open1} className="clue-back-btn">x</button>
+     <button onClick={open1} className="npc-exit">x</button>
       <Npc5 />
     </div>)
 }
 if (openClue2) {
     return (
-        <div style={{textAlign:'center'}}>
+        <div className="home-container" style={{textAlign:'center'}}>
         <button onClick={open2} className="clue-back-btn">x</button>
-         <img className="npcol" src={process.env.PUBLIC_URL+"/globe.png"} alt="library view"/>
+         <img className="globe" src={process.env.PUBLIC_URL+"/globe.png"} alt="library view"/>
     </div>)
 }
 if (openClue3) {
     return (
     <div className="clue-click-div">
      <button onClick={open3} className="clue-back-btn">x</button>
-     { user.clues.length === 3 && user.hints.length === 1 ? (
+     { user.clues.length >= 3 && user.hints.length === 1 ? (
      <button onClick={handleFlip} className="flip-btn">⮩</button>
      ) : null}
       <div className="clue-container">

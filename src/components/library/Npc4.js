@@ -35,12 +35,15 @@ let greeting = dialogue[Math.floor(Math.random()*dialogue.length)];
   return (      
       <div>
         {/* <button onClick={() => handleGiveHint(1)} className="buttons">x</button> */}
+        <div className="npc-name-box">
+          <p className="npc-name">Ms. Warren</p>
+        </div>
         <div className="dialogue-box">
         <p className="dialogue">{greeting}</p>
         {/* <button onClick={handleClick}>Next</button> */}
         </div>
-        <div className="npc5-container">
-          <img className="npcol" src={process.env.PUBLIC_URL+"/npcol.png"} alt="an old woman sits and reads a book"/>
+        <div className="home-container">
+          <img className="npc1" src={process.env.PUBLIC_URL+"/npcol.png"} alt="an old woman sits and reads a book"/>
         </div>
       </div>
   )

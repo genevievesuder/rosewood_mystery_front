@@ -18,7 +18,7 @@ const handleGiveHint = async (hint_id) => {
     setNotif("You received a hint.")
 }
 
-const dialogue = ["Hi there, you must be new here. I haven't seen you before.", `Well it's nice to meet you ${user.character_name}, I'm Theo`, "I've been coming here since I was a little girl. I love poetry, and this library has a wonderful collection.", "I recommend checking it out. Look for the book with a crescent moon on it. It's my favorite.", "Well, I'll see you around!"];
+const dialogue = ["Hi there, you must be new here. I haven't seen you before.", `It's nice to meet you ${user.character_name}, I'm Theo`, "I've been coming here since I was a little girl. I love poetry, and this library has a wonderful collection.", "I recommend checking it out. Look for the book with a crescent moon on it. It's my favorite.", "Well, I'll see you around!"];
 
 const [i, incrementIndex] = useState(0)
 const [text, setText] = useState(`${dialogue[i]}`);
@@ -34,7 +34,10 @@ function handleClick() {
 if (!user) return <h1>...loading</h1>
   return (      
       <div>
-        <button onClick={() => handleGiveHint(1)} className="buttons">x</button>
+        <button onClick={() => handleGiveHint(1)} className="npc-exit">x</button>
+        <div className="npc-name-box">
+          <h4 className="npc-name">Theo Marsh</h4>
+        </div>
         <div className="dialogue-box">
         <p className="dialogue">{text}</p>
         <button onClick={handleClick}>Next</button>
