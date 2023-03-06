@@ -45,7 +45,7 @@ if (openClue1) {
     <div className="clue-click-div">
      <button onClick={open1} className="clue-back-btn">x</button>
       <div className="clue-container">
-       <p>welcome to Clue 1!!!!!!</p>
+        <h3 className="riddle">It travels all around the world without ever leaving it's corner.</h3>
       </div>
     </div>)
 }

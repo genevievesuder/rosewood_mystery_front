@@ -76,7 +76,7 @@ function Board() {
       {hasWon && isStarted && <div className="puzzle-solved">
         { user.clues.length === 4 ? (
         <>
-        <p className="puzzle-clue">Puzzle solved. Return an angry sad note from Lillian</p><br/>
+        <div className="puzzle-clue-letter"><img className="poem" src={process.env.PUBLIC_URL+"/letter2.png"} alt="letter"/></div><br/>
         <button onClick={() => handleClick(5)}className="buttons">x</button>
         </>
         ) : (

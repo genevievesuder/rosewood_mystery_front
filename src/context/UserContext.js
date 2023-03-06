@@ -89,10 +89,54 @@ const handleSignup = (e, formData) => {
         }        
       }) 
     }
+
+
+    const handleAccountDeletion = () => {
+      fetch(`/users/${user.id}`, {
+        method: "DELETE",
+      })
+        .then((r) => { 
+          if (r.status === 204) {
+            setUser(null)
+            setNotif("Your account has been successfully deleted")
+            navigate("/")
+          } else {
+            r.json()
+            .then(err => setNotif(err))
+          }        
+        }) 
+      }
   
+
+  const editUser = (e, editedUserData, setEditedUserData) => {
+    e.preventDefault()
+    console.log(editedUserData)
+    fetch(`/users/${user.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(editedUserData)
+    })
+       .then(res => {
+        if (res.status !== 200) {
+          res.json()
+          .then(messageObj => alert(messageObj.errors))
+        } else {
+          setNotif("Your account has been successfully updated");
+          res.json()
+          .then((updatedUser) => setUser(updatedUser))
+          .then(() => navigate(-1))
+          setEditedUserData({
+            character_name: "",
+            email: ""
+          })
+        }
+    })
+  }
   
   return (
-    <UserContext.Provider value={{user, setUser, handleLogin, handleSignup, handleLogout}}>
+    <UserContext.Provider value={{user, setUser, handleLogin, handleSignup, handleLogout, handleAccountDeletion, editUser}}>
         {children}
     </UserContext.Provider>
 )

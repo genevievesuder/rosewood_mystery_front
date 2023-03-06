@@ -17,6 +17,7 @@ const handleClick = async () => {
   const resp = await Clue(user.clues.length +1)
   console.log(resp)
   !!resp.id ? setUser(resp) : setNotif(resp)
+  setNotif("Check your journal")
 }
 
 
@@ -33,9 +34,10 @@ const handleClick = async () => {
         <div className="first-clue">
             <span className="s1">Welcome to Rosewood Public Library</span><br/>
             <div className="gameplay-container">
-            <p className="s3">Gameplay<br/><br/>
-            Exploring the library will lead you to clues. After you find a clue it will be added to your journal.<br/>❧<br/> You have access to the library's database. Customers may ask you for help--you are working of course. Complete the customer's requests and they might share some helpful information with you.<br/>❧</p>
-            <p className="s3">Collect all the Library's clues to unveil Rosewood's ancient secret...</p><br/>
+            <p className="s3"><br/>
+            You've just moved to the town of Rosewood and begun your new job at the local library. <br/>❧<br/>Gameplay<br/><br/>
+            Exploring the library will lead you to clues. After you find a clue it will be added to your journal.<br/>❧<br/>Unravel the secrets of Rosewood Library...<br/>❧</p>
+            <p className="s3"></p><br/>
         <button onClick={handleClick} className="start">Add clue to journal & begin</button>
             </div>
             

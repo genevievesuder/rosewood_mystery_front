@@ -11,8 +11,26 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Settings = () => {
-const {user} = useContext(UserContext)
-const navigate = useNavigate()
+  const {user, setUser, handleAccountDeletion, editUser} = useContext(UserContext)
+  const [accountDelete, showAccountDelete] = useState(false)
+  const navigate = useNavigate()
+
+  const handleShowDelete = () => {
+    showAccountDelete(currentState => !currentState)
+}
+
+  const [editedUserData, setEditedUserData] = useState({
+    character_name: user.character_name,
+    email: user.email,
+})
+
+const handleChange = ({target: {name, value}}) => {
+  setEditedUserData(currentUser => ({ 
+      ...currentUser,
+      [name]: value
+  }))
+}
+
 
 if (!user) return <h1>...loading</h1>
   return (
@@ -28,12 +46,52 @@ if (!user) return <h1>...loading</h1>
         </span>
         <span style={{float:"right"}}>Welcome, {user.character_name}</span>
       </div>
+      <div><h1>Account settings</h1><br/></div>
       <div className="settings-container">
-        <h1>SETTTINGGSSS</h1>
-        <div>
-            <p>This will be where the user can edit their own account or name, delete account, and maybe turn sound off or change to light mode.</p>
+        
+    
+{/* BEGIN */}
+
+    {/* <button className="buttons" onClick={() => navigate(-1)}>← Back to profile</button> */}
+    <div className="edit-form-container">
+      <h3>Edit your information</h3>
+        <form className="edit-user-form" onSubmit={(e) => editUser(e, editedUserData, setEditedUserData)}>
+            <label>Name</label>
+                <input 
+                className="edit-user-input"
+                onChange={handleChange}
+                name="character_name"
+                placeholder={user.character_name}
+                type="text"
+                value={editedUserData.character_name}
+            ></input><br/>
+            <label>Email</label>
+                <input 
+                className="edit-user-input"
+                onChange={handleChange}
+                name="email"
+                type="text"
+                value={editedUserData.email}
+            ></input><br/>
+                <button className="buttons">Update Account</button>
+        </form>
         </div>
-      </div>
+        <br/>
+        { accountDelete ? null : (
+        <button className="buttons" onClick={handleShowDelete}>Delete Account</button>)}
+        { accountDelete ? (
+        <div>
+        <span><b>Are you sure you want to delete your account? You will lose your game progress.</b></span><br/>
+        <button className="buttons" style={{color: "red"}} onClick={handleAccountDeletion}>Confirm Account Deletion</button>
+        <button className="buttons" onClick={handleShowDelete}>Go back</button>
+        </div>
+        
+        ) : null}
+
+
+
+{/* END */}
+       </div>
     </div>
   )
 }

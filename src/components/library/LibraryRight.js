@@ -40,8 +40,8 @@ if (openClue1) {
     return (
     <div className="clue-click-div">
      <button onClick={open1} className="clue-back-btn">x</button>
-      <div className="clue-container">
-       <p>welcome to Clue 3!!!!!!</p>
+      <div className="poem-clue-container">
+      <img className="poem" src={process.env.PUBLIC_URL+"/poem.png"} alt="poem"/>
       </div>
     </div>)
 }
@@ -68,10 +68,10 @@ if (openClue3) {
   return (
     
     <div className="library-left-container">
-        { user.clues.length >= 2 ? (
+        { user.clues.length >= 2 && user.hints.length >= 1 ? (
         <button onClick={open1} className="lr1"></button>
         ) : null}
-        { user.clues.length >= 3 ? (
+        { user.clues.length >= 4 ? (
         <button onClick={open2} className="lr2"></button>
         ) : null}
         <button onClick={open3} className="lr3"></button>
