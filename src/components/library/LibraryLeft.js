@@ -45,7 +45,7 @@ if (openClue1) {
     <div className="clue-click-div">
      <button onClick={open1} className="clue-back-btn">x</button>
       <div className="clue-container">
-        <h3 className="riddle">It travels all around the world without ever leaving it's corner.</h3>
+        <h3 className="riddle">It travels all around the world without ever leaving it's corner.<br/>♖</h3>
       </div>
     </div>)
 }
@@ -68,6 +68,7 @@ if (openClue3) {
     </div>)
 }
 
+if (!user) return <h1>...loading</h1>
 
   return (
     

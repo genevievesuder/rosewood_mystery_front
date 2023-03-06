@@ -75,15 +75,17 @@ font-family: 'Special Elite', cursive;
   background-color: transparent;
   top: 68%;
   left: 40%;
+  /* border: 3px solid rgb(250, 12, 52); */
   transform: translate(-50%, -50%);
   text-align: center;
   position: absolute;
   z-index: 9999;
   border: transparent;
   height:7vh;
+  width: 4vw;
 }
 .ll1:hover{
-  cursor:pointer;
+  cursor: url(https://cur.cursors-4u.net/symbols/sym-2/sym164.cur), auto !important;
 }
 .ll2:hover{
   cursor:pointer;
@@ -115,7 +117,7 @@ font-family: 'Special Elite', cursive;
 }
 
 .clue-click-div{
-  background-color:#ac9298;
+  background-color:#ac92985f;
   border: 20px solid rgb(104, 104, 115);
   border-style:ridge;
   min-height: 70vh;
@@ -129,7 +131,9 @@ font-family: 'Special Elite', cursive;
 .riddle{
   font-family: 'Nanum Myeongjo', serif;
   font-size:30px;
-  padding-top: 60px;
+  /* padding-top: 60px; */
+  padding: 185px 0;
+  text-align: center;
 }
 
 .poem{
@@ -161,7 +165,7 @@ font-family: 'Special Elite', cursive;
   margin-top: 3vh;
   min-height: 64vh;
   max-width: 90%;
-  background-color: rgb(243, 221, 225);
+  background-color: rgba(243, 221, 225, 0.251);
 }
 
 .clue-container-sp{

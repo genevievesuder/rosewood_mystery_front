@@ -32,7 +32,7 @@ const open2 = () => {
 }
 const open3 = () => {
     setOpenClue3(current => !current)
-    if (!openClue3) {
+    if (!openClue3 && user.clues.length === 3) {
         handleClick(4)
     }
 }
@@ -72,6 +72,8 @@ if (openClue3) {
     </div>)
 }
 
+
+if (!user) return <h1>...loading</h1>
 
   return (
     

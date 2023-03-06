@@ -1,10 +1,16 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import { useState, useContext, useEffect } from 'react'
+import { UserContext } from '../../context/UserContext';
+// import { TriggerContext } from '../context/TriggerContext';
+
 
 const LibraryEntry = () => {
-
+  
+  const {user} = useContext(UserContext)
   const navigate = useNavigate()
 
+  if (!user) return <h1>...loading</h1>
   return (
     <div>
       <div className="point-left">

@@ -30,7 +30,7 @@ function handleClick() {
   }
 
 //   const navigate = useNavigate()
-
+if (!user) return <h1>...loading</h1>
   return (      
       <div>
         <button onClick={() => handleGiveHint(3)} className="buttons">x</button>

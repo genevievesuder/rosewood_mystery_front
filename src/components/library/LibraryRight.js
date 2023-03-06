@@ -64,6 +64,7 @@ if (openClue3) {
     </div>)
 }
 
+if (!user) return <h1>...loading</h1>
 
   return (
     
