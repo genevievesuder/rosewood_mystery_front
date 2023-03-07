@@ -61,7 +61,7 @@ if (openClue3) {
     <div className="clue-click-div">
      <button onClick={open3} className="clue-back-btn">x</button>
      { user.clues.length >= 3 && user.hints.length === 1 ? (
-     <button onClick={handleFlip} className="flip-btn">⮩</button>
+     <button onClick={handleFlip} className="flip-btn">↷</button>
      ) : null}
       <div className="clue-container">
     {!flipImg ? (

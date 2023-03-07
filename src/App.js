@@ -20,7 +20,6 @@ import MembersDb from './components/computer/MembersDb';
 import Settings from './components/computer/Settings';
 import Help from './components/computer/Help';
 import Exit from './main/Exit';
-import FirstClue from './components/FirstClue';
 
 import SlidingPuzzle from './components/puzzles/SlidingPuzzle';
 
@@ -30,6 +29,7 @@ function App() {
   return (
     <div className="App">
      <Notification />
+
       { user ? <GameNav /> : null }
   
         <Routes>
@@ -51,7 +51,6 @@ function App() {
           <Route path="/journal" element={<Journal/>} />
           <Route path="/exit" element={<Exit/>} />
           <Route path="/puzzle" element={<SlidingPuzzle/>} />
-          <Route path="/first" element={<FirstClue/>} />
         </Routes>
     </div>
   );

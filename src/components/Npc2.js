@@ -15,7 +15,6 @@ const handleGiveHint = async (hint_id) => {
     console.log(resp)
     !!resp.id ? setUser(resp) : setNotif(resp)
     navigate("/home")
-    setNotif("You received a hint.")
 }
 
 const dialogue = ["Excuse me", "How am I supposed to take reading selfies while it's freezing cold in here!?", "Well?", "Ugh. Just forget it, you probably don't even know how to use a thermostat.", "Whatever, I'm getting out of here. This library is so creepy anyway."];

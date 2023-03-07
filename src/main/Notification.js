@@ -14,6 +14,7 @@ const Notifications = () => {
         };
     }, [notif, setNotif]);
 
+
     if (notif !== "") {
   return (
     <div className="notification-banner">
