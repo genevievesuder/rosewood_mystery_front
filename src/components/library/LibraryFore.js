@@ -95,7 +95,7 @@ const handleOpenGlobe = () => {
 
 const hint9 = () => {
     handleClick(9)
-    setNotif("You found a book inside the globe..")
+    setNotif("A door has opened.")
     navigate('/library')
 }
 
@@ -135,7 +135,14 @@ if (!user) return <h1>...loading</h1>
         <button onClick={open3} className="lf3"></button>
             <BackBtn />
         <div className="lib-container">
+    { user.clues.length === 9 && user.hints.length === 3 ? (
+        <>
+        <div className="enter-final-room"></div>
+        <img className="home-view" src={process.env.PUBLIC_URL+"/secretdoor.png"} alt="a wall of the library has opened..."/>
+        </>
+    ) : (
         <img className="home-view" src={process.env.PUBLIC_URL+"/library-fore.png"} alt="library view"/>
+    )}
         </div>
     </div>
   )
