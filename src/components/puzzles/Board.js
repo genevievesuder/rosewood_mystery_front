@@ -23,7 +23,7 @@ function Board() {
   }
 
   const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
-  const [isStarted, setIsStarted] = useState(false); //change back to false
+  const [isStarted, setIsStarted] = useState(true); //change back to false
   console.log('is started:', isStarted)
 
   const shuffleTiles = () => {
@@ -74,7 +74,7 @@ function Board() {
         ))}
       </ul> 
       {hasWon && isStarted && <div>
-        { user.clues.length >= 4 ? (
+        { user.clues.length === 5  && user.hints.length >= 2 ? (
         <>
         <div className="puzzle-clue-letter"><img src={process.env.PUBLIC_URL+"/letter2.png"} alt="letter"/></div><br/>
         <button className="puzzle-button" onClick={() => handleClick(5)}>Collect clue</button>

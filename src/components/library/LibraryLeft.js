@@ -32,9 +32,7 @@ const open1 = () => {
 
 const open2 = () => {
     setOpenClue2(current => !current)
-    // if (!openClue1) {
-    //     handleClick(3)
-    // }
+    setNotif("Maybe this needs some sort of password...")
 }
 
 // const open3 = () => {

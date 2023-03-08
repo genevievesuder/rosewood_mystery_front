@@ -36,15 +36,18 @@ const open2 = () => {
 }
 const open3 = () => {
     setOpenClue3(current => !current)
-    if (!openClue3 && user.clues.length === 3) {
-        handleClick(4)
-    }
+    // if (!openClue3 && user.clues.length >= 3 && user.hints.length >= 1) {
+    //     handleClick(4)
+    // }
 }
 
 
 const handleFlip = () => {
     setFlipImg(current => !current)
     setNotif("Interesting..")
+    if (user.clues.length >= 3 && user.hints.length >= 1) {
+        handleClick(4)
+    }
 }
 
 if (openClue1) {
@@ -66,7 +69,7 @@ if (openClue3) {
     return (
     <div className="clue-click-div">
      <button onClick={open3} className="clue-back-btn">x</button>
-     { user.clues.length >= 3 && user.hints.length === 1 ? (
+     { user.clues.length >= 4 && user.hints.length >= 1 ? (
      <button onClick={handleFlip} className="flip-btn">↷</button>
      ) : null}
       <div className="clue-container">

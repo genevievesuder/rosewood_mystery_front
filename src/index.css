@@ -194,11 +194,19 @@ background-color: transparent;
   margin-top: 3vh;
   min-height: 64vh;
   max-width: 90%;
-  background-color: rgba(219, 185, 163, 0.792);
+  background-color: rgba(218, 218, 216, 0.792);
 }
 
 .photograph{
   max-width: 100%;
+}
+
+.key{
+  max-width: 100%;
+}
+
+.key:hover{
+  cursor: url(https://cur.cursors-4u.net/games/gam-2/gam134.cur), auto !important;
 }
 
 .flip-btn{

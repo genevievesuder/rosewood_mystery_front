@@ -23,9 +23,17 @@ const [i, incrementIndex] = useState(0)
 const [text, setText] = useState(`${dialogue[i]}`);
 
 //EQUALS UNDEFINED!!! NEED TO FIX.
-function handleClick() {
-    setText(`${dialogue[i + 1]}`);
-    incrementIndex(i + 1)
+// function handleClick() {
+//     setText(`${dialogue[i + 1]}`);
+//     incrementIndex(i + 1)
+//   }
+
+  function handleClick() {
+    setText(`${dialogue[i]}`);
+    if (i < dialogue.length) incrementIndex(i + 1)///Try this
+    else return (
+      <button onClick={handleGiveHint(2)}>Ok</button>
+    )
   }
 
   // if (i < dialogue.length) incrementIndex(i + 1)///Try this

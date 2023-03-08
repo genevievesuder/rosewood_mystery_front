@@ -23,13 +23,16 @@ const Backroom = () => {
 
     const open1 = () => {
         setOpenClue1(current => !current)
-        if (!openClue1) {
-            handleClick(6)
-        }
+        setFlipImg(false)
+        // if (!openClue1) {
+        //     handleClick(6)
+        // }
     }
 
     const handleFlip = () => {
       setFlipImg(current => !current)
+      handleClick(6)
+      setNotif("Creepy...")
   }
 
     if (openClue1) {
