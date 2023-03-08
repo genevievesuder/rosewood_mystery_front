@@ -1300,6 +1300,10 @@ box-shadow: 4px 4px;
   text-shadow: rgb(255, 255, 255) 1px 0 10px;
 }
 
+.dec1:hover{
+  cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur116.cur), auto !important;
+}
+
 .dec2{
   /* font-family: 'Berkshire Swash', cursive; */
   font-size: 25px;
@@ -1315,6 +1319,10 @@ box-shadow: 4px 4px;
   background-color: rgba(125, 125, 125, 0.518);
   box-shadow: 5px 5px 2px 1px rgba(104, 167, 192, 0.2);
   /* text-shadow: rgb(255, 255, 255) 1px 0 10px; */
+}
+
+.dec2:hover{
+  cursor: pointer;
 }
 
 .enter-final-room{

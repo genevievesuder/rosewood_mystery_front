@@ -21,9 +21,10 @@ import Settings from './components/computer/Settings';
 import Help from './components/computer/Help';
 import Exit from './main/Exit';
 import DndPuzzle from './components/DndPuzzle';
-
-
+// import Credits from './main/Credits';
 import SlidingPuzzle from './components/puzzles/SlidingPuzzle';
+
+
 
 function App() {
   const {user} = useContext(UserContext)
@@ -54,6 +55,7 @@ function App() {
           <Route path="/exit" element={<Exit/>} />
           <Route path="/puzzle" element={<SlidingPuzzle/>} />
           <Route path="/letter" element={<DndPuzzle/>} />
+          {/* <Route path="/credits" element={<Credits/>} /> */}
         </Routes>
     </div>
   );

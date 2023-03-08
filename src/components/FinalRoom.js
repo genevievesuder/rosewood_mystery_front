@@ -10,7 +10,7 @@ const FinalRoom = () => {
     const {user, setUser} = useContext(UserContext)
     const navigate = useNavigate()
     const [grabCrystal, setGrabCrystal] = useState(false)
-  
+    const [openClue2, setOpenClue2] = useState(false)
     
     const handleClick = async (clue_id) => {
         const resp = await Clue(clue_id)
@@ -18,6 +18,29 @@ const FinalRoom = () => {
         !!resp.id ? setUser(resp) : setNotif(resp)
     }
 
+const turnAround = () => {
+    handleClick(10)
+}
+
+const placeCrystal = () => {
+    setOpenClue2(true)
+}
+
+    if (openClue2 && user.clues.length === 9) {
+        return (
+            <div className="final-room-container" style={{textAlign:'center'}}>
+                <button onClick={turnAround} className="clue-back-btn">Turn around</button>
+                <img className="globe" src={process.env.PUBLIC_URL+"/finalbook.jpg"} alt="the crystal fits perfectly inside the book"/>
+            </div>)
+    }
+
+    if (openClue2 && user.clues.length === 10) {
+        return (
+            <div className="final-room-container" style={{textAlign:'center'}}>
+                <button className="clue-back-btn">I can finally move on. Thank you.</button>
+                <img className="globe" src={process.env.PUBLIC_URL+"/g.jpg"} alt="A ghost appeared"/>
+            </div>)
+    }
 
 
  
@@ -26,7 +49,8 @@ const FinalRoom = () => {
     <div className="final-room-container">
     { grabCrystal ? (
         <>
-       <button className="dec1">.:*・°☆.Place crystal in book cover .:*・°☆.</button> <button className="dec2">Clock out and go home</button>
+       <button onClick={placeCrystal} className="dec1">.:*・°☆.Place crystal in book cover .:*・°☆.</button> 
+       <button className="dec2">Clock out and go home</button>
        <img className="home-view" src={process.env.PUBLIC_URL+"/crystal.jpg"} alt="you hold a beautiful glowing crystal"/>
        </>
     ) : (
