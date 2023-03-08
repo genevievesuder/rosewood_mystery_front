@@ -26,8 +26,7 @@ const [text, setText] = useState(`${dialogue[i]}`);
 //EQUALS UNDEFINED!!! NEED TO FIX.
 function handleClick() {
     setText(`${dialogue[i + 1]}`);
-    incrementIndex(i + 1)
-    
+    if (i < dialogue.length) incrementIndex(i + 1)///Try this
   }
 
 //   const navigate = useNavigate()

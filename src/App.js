@@ -20,6 +20,8 @@ import MembersDb from './components/computer/MembersDb';
 import Settings from './components/computer/Settings';
 import Help from './components/computer/Help';
 import Exit from './main/Exit';
+import DndPuzzle from './components/DndPuzzle';
+
 
 import SlidingPuzzle from './components/puzzles/SlidingPuzzle';
 
@@ -41,7 +43,7 @@ function App() {
           <Route path="/library/right" element={<LibraryRight />} />
           <Route path="/library/forward" element={<LibraryFore />} />
           <Route path="/computer" element={<Computer />} />
-          <Route path="/members" element={<MembersDb />} />
+          {/* <Route path="/members" element={<MembersDb />} /> */}
           <Route path="/settings" element={<Settings />} />
           <Route path="/help" element={<Help />} />
           <Route path="/info" element={<Info/>} />
@@ -51,6 +53,7 @@ function App() {
           <Route path="/journal" element={<Journal/>} />
           <Route path="/exit" element={<Exit/>} />
           <Route path="/puzzle" element={<SlidingPuzzle/>} />
+          <Route path="/letter" element={<DndPuzzle/>} />
         </Routes>
     </div>
   );

@@ -13,6 +13,8 @@ const Backroom = () => {
     const navigate = useNavigate()
     const [flipImg, setFlipImg] = useState(false)
 
+    
+    
     const handleClick = async (clue_id) => {
         const resp = await Clue(clue_id)
         console.log(resp)
@@ -43,7 +45,7 @@ const Backroom = () => {
         </div>)
     }
  
-    
+
 
  
     if (!user) return <h1>...loading</h1>

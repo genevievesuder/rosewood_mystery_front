@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import './components/puzzles/puzzle.css';
 import App from './App';
+// import { DndProvider } from 'react-dnd'
+// import { HTML5Backend } from 'react-dnd-html5-backend';
 import { BrowserRouter } from "react-router-dom"
 // import { TriggerProvider } from './context/TriggerContext';
 import { UserProvider } from './context/UserContext';
@@ -20,9 +22,11 @@ root.render(
         {/* <TriggerProvider> */}
             {/* <MemberProvider> */}
               <UserProvider>
+                {/* <DndProvider backend={HTML5Backend}> */}
                 {/* <ClueProvider> */}
                   <App />
                 {/* </ClueProvider> */}
+                {/* </DndProvider> */}
               </UserProvider>
             {/* </MemberProvider> */}
         {/* </TriggerProvider> */}

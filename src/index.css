@@ -1,6 +1,6 @@
 
 body { min-height: 100vh; 
-  background-color: black; 
+  background-color: rgb(240, 209, 209); 
   margin: 0;
   max-width: 100vw;
   overflow: hidden;
@@ -17,6 +17,37 @@ font-family: 'Special Elite', cursive;
 font-family: 'Sono', sans-serif;
    */
 
+  
+.drag-div{
+background-color: yellow;
+}
+
+.dnd-letters{
+  display: inline-block;
+  margin: 2vw;
+  text-align: center;
+  background-color: rgb(223, 218, 219);
+  border: 10px solid rgb(176, 83, 83);
+  border-style: ridge;
+  min-width: 4vw;
+  max-width: 4vw;
+  min-height: 4.5vh;
+  font-size: 30px;
+}
+
+.drop-div{
+  border: 4px solid red;
+  min-width: 60vw;
+  height: 20vh;
+  background-color: transparent;
+  top: 60%;
+  left: 50%;
+  /* border: 3px solid rgb(250, 12, 52); */
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
+  z-index: 9999;
+}
 
 .main-img{
   width: 90%;
@@ -1103,13 +1134,13 @@ box-shadow: 4px 4px;
   grid-row: 1;
 }
 
-.search-btn{
+/* .search-btn{
   text-align: center;
   grid-column: 2;
   grid-row: 1;
   min-width:2vw;
   max-width:2vw;
-}
+} */
 
 .db-filter{
  grid-column: 3;
@@ -1258,7 +1289,14 @@ box-shadow: 4px 4px;
 }
 
 /* … */
+.search-btn{
+  max-width: 4vw;
+}
 
+.book-search-input{
+  width: 15vw;
+  line-height: 1.40;
+}
 
 /* Background image css example from Seunggyu -->> */
 /* background-image: url('https://www.pngmart.com/files/3/Rick-And-Morty-PNG-Photos.png');
