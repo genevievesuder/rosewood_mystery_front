@@ -23,14 +23,14 @@ const [backroom, setBackroom] = useState(false)
 
   if (!user) return <h1>...loading</h1>
   if (user.clues.length === 0) return <FirstClue user_id={user.id}/>
-  if (user.clues.length === 2 && user.hints.length === 0) return <Npc1 user_id={user.id}/>
-  if (user.clues.length === 4 && user.hints.length === 1) return <Npc3 user_id={user.id}/>
+  if ((user.clues.length === 2 && user.hints.length === 0) || (user.clues.length === 3 && user.hints.length === 0) || (user.clues.length === 4 && user.hints.length === 0) ) return <Npc1 user_id={user.id}/>
+  if ((user.clues.length === 4 && user.hints.length === 1) || (user.clues.length === 5 && user.hints.length === 1)) return <Npc3 user_id={user.id}/>
   if (user.clues.length === 5 && user.hints.length === 2) return <Npc2 user_id={user.id}/>
   if (backroom) return <Backroom />
 
   return (
   <div>
-    { user.clues.length >= 5 && user.hints.length >= 3 ? (
+    { user.clues.length >= 6 && user.hints.length >= 3 ? (
     <button onClick={() => setBackroom(true)} className="backroom-btn">Enter backroom ➔</button>
     ) : null}
     <div onClick={() => navigate("/computer")} className="box"></div>

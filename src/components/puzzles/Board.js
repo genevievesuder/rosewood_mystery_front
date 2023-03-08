@@ -74,7 +74,7 @@ function Board() {
         ))}
       </ul> 
       {hasWon && isStarted && <div>
-        { user.clues.length === 4 ? (
+        { user.clues.length >= 4 ? (
         <>
         <div className="puzzle-clue-letter"><img src={process.env.PUBLIC_URL+"/letter2.png"} alt="letter"/></div><br/>
         <button className="puzzle-button" onClick={() => handleClick(5)}>Collect clue</button>

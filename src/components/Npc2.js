@@ -26,8 +26,12 @@ const [text, setText] = useState(`${dialogue[i]}`);
 function handleClick() {
     setText(`${dialogue[i + 1]}`);
     incrementIndex(i + 1)
-    
   }
+
+  // if (i < dialogue.length) incrementIndex(i + 1)///Try this
+  // else return (
+  //   <button onClick={handleGiveHint(2)}>Ok</button>
+  // )
 
 //   const navigate = useNavigate()
 if (!user) return <h1>...loading</h1>

@@ -78,7 +78,7 @@ if (!user) return <h1>...loading</h1>
         {/* <button onClick={open3} className="lr3"></button> */}
             <BackBtn />
         <div className="lib-container">
-        { user.clues.length < 5 ? (
+        { user.clues.length <= 5 && user.hints.length >= 2 ? (
         <img className="library-view" src={process.env.PUBLIC_URL+"/library-right1.jpg"} alt="library view"/>
         ) : (
         <img className="library-view" src={process.env.PUBLIC_URL+"/library-right2.jpg"} alt="library view"/>

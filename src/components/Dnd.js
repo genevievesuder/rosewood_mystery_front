@@ -1,17 +1,10 @@
-import {useState} from 'react'
+import {useState, useContext, useEffect} from 'react'
 import Letter from './Letter'
 import { useDrop } from 'react-dnd'
-
-// dndBoard[0]
-// {id: 20, letter: 'T'}
-// dndBoard[1]
-// {id: 18, letter: 'R'}
-// dndBoard[2]
-// {id: 1, letter: 'A'}
-// dndBoard[3]
-// {id: 9, letter: 'I'}
-// dndBoard[4]
-// {id: 14, letter: 'N'}
+import Clue from './Clue'
+import { UserContext } from '../context/UserContext';
+import {useNavigate} from 'react-router-dom'
+import { NotifContext } from "../context/NotifContext";
 
 
 const Alphabet = [
@@ -122,6 +115,15 @@ const Alphabet = [
 ]
 
 const Dnd = () => {
+    const {notif, setNotif} = useContext(NotifContext)
+    const {user, setUser} = useContext(UserContext)
+
+    const handleClick = async (clue_id) => {
+        const resp = await Clue(clue_id)
+        console.log(resp)
+        !!resp.id ? setUser(resp) : setNotif(resp)
+    }
+    
     const [dndBoard, setDndBoard] = useState([])
     const [{isOver}, drop] = useDrop(() => ({
         accept: "text",
@@ -135,21 +137,90 @@ const Dnd = () => {
         const alphabetList = Alphabet.filter((letter) => id === letter.id);
         setDndBoard((dndBoard) => [...dndBoard, alphabetList[0]])
     };
+
+    // debugger
+//     dndBoard.map(item => item.id)
+// (5) [19, 20, 1, 13, 16]
+
+const [win, setWin] = useState(false)
+
+
+const winningNumbers = dndBoard !== [] ? dndBoard.map(item => item.id) : null
+// console.log(winningNumbers)
+// debugger
+
+// useEffect(() => {
+    // }, [])
+    
+    const checkWin = () => {
+        let x = [];
+        const winningArray =  [19, 20, 1, 13, 16] 
+        for (let i = 0; i < winningNumbers.length; i++) {
+            if (winningNumbers[i] === winningArray[i]) {
+                x.push("correct")
+                if (x.filter(res => res === "correct").length === 5) {
+                    console.log("CORRRREEEECT")
+                    return "CORRECT"
+                }
+            }
+            console.log(x);
+        }
+    }
+
+    // checkWin() === "CORRECT" ? setWin(true) : console.log("some thing")
+
+if (checkWin() === "CORRECT") return <div className="dnd-solved"><h1>YOU FOUND A KEY</h1><br/><img onClick={handleClick(8)} className="photograph" src={process.env.PUBLIC_URL+"/letter.png"} alt="letter"/></div>
+
+// if (winningNumbers ===  [19, 20, 1, 13, 16]) setWin(true)
+
+// if (winningNumbers ===  [19, 20, 1, 13, 16]) return (
+//     <div className="dnd-solved"><h1>Solved</h1><br/><button>Collect 🗝</button></div>
+// )
+
+// const winningNumbers = dndBoard.map(item => item.id) === [19, 20, 1, 13, 16]
+
+// console.log(winningNumbers)
+
+// if (winningNumbers) return (
+//     <div className="dnd-solved"><h1>Solved</h1><br/><button>Collect 🗝</button></div>
+// )
+
+    // if (dndBoard.map(item => item.id) === [19, 20, 1, 13, 16]) return (
+    //     <div className="dnd-solved"><h1>Solved</h1><br/><button>Collect 🗝</button></div>
+    // )
+
     // console.log(dndBoard);
+// debugger
+// if (dndBoard === ['S', 'T', 'A', 'M', 'P']) return (
+//     <div className="dnd-solved"><h1>Solved</h1><br/><button>Collect 🗝</button></div>
+// )
+
+// if (dndBoard === [{id: 19, letter: 'S'},{id: 20, letter: 'T'},{id: 1, letter: 'A'},{id: 13, letter: 'M'},{id: 16, letter: 'P'}]) 
+// return (<div className="dnd-solved"><h1>Solved</h1><br/><button>Collect 🗝</button></div>)
+// debugger
 
   return (
     <>
+    {/* { win ? (
+    <div className="dnd-solved">
+    <h1>Solved</h1><br/>
+    <button onClick={handleClick(8)} >Collect 🗝</button>
+    </div>
+    ) : (
+    <> */}
     <div className="drag-div">{Alphabet.map((letter) => {
         return <Letter letter={letter.letter} id={letter.id}/>
     })}
     </div>
+<button className="buttons" onClick={() => setDndBoard([])}>↻</button>
     <div className="drop-div" ref={drop}>
       {dndBoard.map((letter) => {
             return <Letter letter={letter.letter} id={letter.id} />
         })}  
     </div>
-
     </>
+    // )}
+    // </>
   )
 }
 

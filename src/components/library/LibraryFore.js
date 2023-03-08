@@ -29,6 +29,10 @@ const open1 = () => {
 }
 const open2 = () => {
     setOpenClue2(current => !current)
+    if (!openClue2) {
+        handleClick(7)
+        setNotif("It looks like it could open...")
+    }
 }
 const open3 = () => {
     setOpenClue3(current => !current)
@@ -36,6 +40,7 @@ const open3 = () => {
         handleClick(4)
     }
 }
+
 
 const handleFlip = () => {
     setFlipImg(current => !current)
@@ -49,6 +54,7 @@ if (openClue1) {
       <Npc5 />
     </div>)
 }
+// { user.clues.length === 6  ? (
 if (openClue2) {
     return (
         <div className="home-container" style={{textAlign:'center'}}>
