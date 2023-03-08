@@ -5,6 +5,7 @@ import { useState, useContext } from 'react'
 import {useNavigate} from 'react-router-dom'
 import { NotifContext } from "../../context/NotifContext";
 import Npc5 from './Npc4'
+import FinalRoom from '../FinalRoom';
 import { Navigate } from 'react-router-dom';
 
 const LibraryRight = () => {
@@ -20,6 +21,9 @@ const LibraryRight = () => {
     const [openClue3, setOpenClue3] = useState(false)
     const [openGlobe, setOpenGlobe] = useState(false)
     const [book, setBook] = useState(false)
+    const [enterFinalRoom, setEnterFinalRoom] = useState(false)
+
+
 
     const handleClick = async (clue_id) => {
         const resp = await Clue(clue_id)
@@ -118,6 +122,11 @@ if (openGlobe) {
     )
 }
 
+if (enterFinalRoom) {
+    return <FinalRoom />
+}
+
+
 if (!user) return <h1>...loading</h1>
 
   return (
@@ -137,7 +146,7 @@ if (!user) return <h1>...loading</h1>
         <div className="lib-container">
     { user.clues.length === 9 && user.hints.length === 3 ? (
         <>
-        <div className="enter-final-room"></div>
+        <div onClick={() => setEnterFinalRoom(true)} className="enter-final-room"></div>
         <img className="home-view" src={process.env.PUBLIC_URL+"/secretdoor.png"} alt="a wall of the library has opened..."/>
         </>
     ) : (
