@@ -1257,6 +1257,33 @@ box-shadow: 4px 4px;
   object-fit: contain;
 }
 
+.final-room-container{
+  display: flex;
+  min-width:100vw;
+  max-width: 100vw;
+  min-height: 90vh;
+  max-height: 90vh;
+  /* overflow: scroll; */
+  background-color: black;
+  text-align: center; 
+}
+
+.frc{
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: absolute;
+  z-index: 9999;
+  border: transparent;
+  height:25vh;
+  width: 20vw;
+}
+
+.frc:hover{
+  cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur116.cur), auto !important;
+}
+
 .enter-final-room{
   top: 60%;
   left: 30%;
