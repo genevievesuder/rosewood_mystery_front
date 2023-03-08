@@ -80,7 +80,7 @@ if (!user) return <h1>...loading</h1>
     { user.clues.length >= 1 ? (
         <button onClick={open1} className="ll1"></button>
     ) : null}
-    { user.clues.length >= 7 ? (
+    { user.clues.length === 7 && user.hints.length === 3 ? (
         <button onClick={open2} className="ll2"></button>
     ) : null}
         {/* <button onClick={open3} className="ll3"></button> */}

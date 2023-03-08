@@ -3,7 +3,7 @@ import Letter from './Letter'
 import { useDrop } from 'react-dnd'
 import Clue from './Clue'
 import { UserContext } from '../context/UserContext';
-import {useNavigate} from 'react-router-dom'
+import {Navigate, useNavigate} from 'react-router-dom'
 import { NotifContext } from "../context/NotifContext";
 
 
@@ -115,6 +115,7 @@ const Alphabet = [
 ]
 
 const Dnd = () => {
+    const navigate = useNavigate();
     const {notif, setNotif} = useContext(NotifContext)
     const {user, setUser} = useContext(UserContext)
 
@@ -158,7 +159,13 @@ const winningNumbers = dndBoard !== [] ? dndBoard.map(item => item.id) : null
         }
     }
 
-if (checkWin() === "CORRECT") return <div className="dnd-solved"><h1>YOU FOUND A KEY</h1><br/><img onClick={handleClick(8)} className="key" src={process.env.PUBLIC_URL+"/key.png"} alt="key"/></div>
+const grabKey = () => {
+    handleClick(8)
+    setNotif("You found a key.")
+    navigate('/library')
+}
+
+if (checkWin() === "CORRECT") return <div className="dnd-solved"><h1>YOU FOUND A KEY</h1><br/><img onClick={grabKey} className="key" src={process.env.PUBLIC_URL+"/key.png"} alt="key"/></div>
 
 
   return (

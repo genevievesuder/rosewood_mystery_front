@@ -32,7 +32,7 @@ const Backroom = () => {
     const handleFlip = () => {
       setFlipImg(current => !current)
       handleClick(6)
-      setNotif("Creepy...")
+      setNotif("What the...")
   }
 
     if (openClue1) {
