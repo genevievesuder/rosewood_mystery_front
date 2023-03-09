@@ -23,7 +23,7 @@ function Board() {
   }
 
   const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
-  const [isStarted, setIsStarted] = useState(true); //change back to false
+  const [isStarted, setIsStarted] = useState(false); //change back to false
   console.log('is started:', isStarted)
 
   const shuffleTiles = () => {

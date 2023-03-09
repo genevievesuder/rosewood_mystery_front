@@ -31,8 +31,8 @@ const [text, setText] = useState(`${dialogue[i]}`);
 //   }
 
   function handleClick() {
-    setText(`${dialogue[i]}`);
-    if (i < dialogue.length) incrementIndex(i + 1)///Try this
+    setText(`${dialogue[i+ 1]}`);
+    if (i < dialogue.length - 2) incrementIndex(i + 1)///Try this
     else return (
       <button onClick={handleGiveHint(3)}>Ok</button>
     )

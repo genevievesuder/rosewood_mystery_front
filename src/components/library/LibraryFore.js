@@ -126,6 +126,22 @@ if (enterFinalRoom) {
     return <FinalRoom />
 }
 
+if (user.clues.length === 10) {
+    return (
+     <div className="home-container">
+        <img className="home-view" src={process.env.PUBLIC_URL+"/gameoverlibrary.png"} alt="library view"/>
+     </div>
+    )
+}
+
+if (user.clues.length === 8 && user.hints.length === 3) {
+    return(
+        <>
+        <div onClick={handleOpenGlobe} className="lf2"></div>  
+        <img className="home-view" src={process.env.PUBLIC_URL+"/library-fore.png"} alt="library view"/>
+        </>
+    )
+}
 
 if (!user) return <h1>...loading</h1>
 
@@ -136,11 +152,12 @@ if (!user) return <h1>...loading</h1>
     {/* { user.clues.length === 8 && user.hints.length === 3 ? ( */}
         {/* <button onClick={handleOpenGlobe} className="lf2"></button> */}
      {/* ) : ( */}
-     { user.clues.length === 8 && user.hints.length === 3 ? (
+     {/* { user.clues.length === 8 && user.hints.length === 3 ? (
      <div onClick={handleOpenGlobe} className="lf2"></div>
-     ) : (
+     ) : ( null)} */}
+    { user.clues.length >= 1 ? (
         <button onClick={open2} className="lf2"></button>
-     )}
+    ) : ( null)}
         <button onClick={open3} className="lf3"></button>
             <BackBtn />
         <div className="lib-container">

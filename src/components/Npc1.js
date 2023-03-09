@@ -26,8 +26,8 @@ const [text, setText] = useState(`${dialogue[i]}`);
 //EQUALS UNDEFINED!!! NEED TO FIX.
 
   function handleClick() {
-    setText(`${dialogue[i]}`);
-    if (i < dialogue.length) incrementIndex(i + 1)///Try this
+    setText(`${dialogue[i+ 1]}`);
+    if (i < dialogue.length - 2) incrementIndex(i + 1)
     else return (
       <button onClick={handleGiveHint(1)}>Ok</button>
     )

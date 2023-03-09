@@ -21,8 +21,6 @@
     "react-motion": "^0.5.2",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
-    "react-scroll-text": "^1.0.1",
-    "react-type-animation": "^2.1.2",
     "web-vitals": "^2.1.4",
     "webpack-5": "^0.0.0"
   },
