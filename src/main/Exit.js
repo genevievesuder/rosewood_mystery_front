@@ -1,11 +1,10 @@
-import React from 'react'
-import { useState, useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { UserContext } from '../context/UserContext';
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Exit = () => {
     const navigate = useNavigate()
-    const {user, handleLogout} = useContext(UserContext)
+    const {handleLogout} = useContext(UserContext)
 
   return (
     <div className="are-you-sure-container">

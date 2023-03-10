@@ -1,17 +1,15 @@
 import React from 'react'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutlined';
-// import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import HomeIcon from '@mui/icons-material/Home';
-// import PrintIcon from '@mui/icons-material/Print';
 import CoPresentIcon from '@mui/icons-material/CoPresent';
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext } from 'react'
 import { UserContext } from '../../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 
 
 
 const Settings = () => {
-  const {user, setUser, handleAccountDeletion, editUser} = useContext(UserContext)
+  const {user, handleAccountDeletion, editUser} = useContext(UserContext)
   const [accountDelete, showAccountDelete] = useState(false)
   const navigate = useNavigate()
 
@@ -42,17 +40,13 @@ if (!user) return <h1>...loading</h1>
         {/* <PeopleAltIcon className="toolbar-buttons"></PeopleAltIcon> */}
         <HomeIcon onClick={() => navigate("/computer")} className="toolbar-buttons"></HomeIcon>
         <CoPresentIcon onClick={() => navigate("/settings")} className="toolbar-buttons"></CoPresentIcon>
-        {/* <PrintIcon className="toolbar-buttons"></PrintIcon> */}
         </span>
         <span style={{float:"right"}}>Welcome, {user.character_name}</span>
       </div>
       <div className="settings-container">
+
        <h1>Account settings</h1><br/>
         
-    
-{/* BEGIN */}
-
-    {/* <button className="buttons" onClick={() => navigate(-1)}>← Back to profile</button> */}
     <div className="edit-form-container">
       <h3>Edit your information</h3>
         <form className="edit-user-form" onSubmit={(e) => editUser(e, editedUserData, setEditedUserData)}>
@@ -82,15 +76,10 @@ if (!user) return <h1>...loading</h1>
         { accountDelete ? (
         <div>
         <span><b>Are you sure you want to delete your account? You will lose your game progress.</b></span><br/>
-        <button className="buttons" style={{color: "red"}} onClick={handleAccountDeletion}>Confirm Account Deletion</button>
-        <button className="buttons" onClick={handleShowDelete}>Go back</button>
+          <button className="buttons" style={{color: "red"}} onClick={handleAccountDeletion}>Confirm Account Deletion</button>
+          <button className="buttons" onClick={handleShowDelete}>Go back</button>
         </div>
-        
         ) : null}
-
-
-
-{/* END */}
        </div>
     </div>
   )

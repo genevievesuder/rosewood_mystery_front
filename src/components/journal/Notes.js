@@ -4,8 +4,8 @@ import { NotifContext } from '../../context/NotifContext';
 
 const Notes = ({note, id}) => {
 
-const {notif, setNotif} = useContext(NotifContext)
-const {user, setUser} = useContext(UserContext)
+const {setNotif} = useContext(NotifContext)
+const {setUser} = useContext(UserContext)
 
 const [showEditForm, setShowEditForm] = useState(false)
 
@@ -24,21 +24,19 @@ const handleChange = ({target: {name, value}}) => {
   }))
 }
 
-
 const deleteNote = () => {
   fetch(`/notes/${id}`, {
     method: "DELETE",
   })
     .then((r) => { 
       if (r.status === 204) {
-        console.log(`deleted`)
-          setUser((currentUser) => (
-            {
-              ...currentUser, 
-              notes: [
-                ...currentUser.notes.filter(note => note.id !== id)
-              ]
-            }))
+        setUser((currentUser) => (
+          {
+            ...currentUser, 
+            notes: [
+              ...currentUser.notes.filter(note => note.id !== id)
+            ]
+          }))
       } else {
         r.json()
         .then(err => alert(err))
@@ -70,8 +68,6 @@ const editNote = (e) => {
        })
   }
 
-
-
   return (
     <div>
         { showEditForm ? (
@@ -83,23 +79,10 @@ const editNote = (e) => {
                 type="text"
                 value={editedNote.note}
                 // placeholder="Title"
-            ></input><br/>
-            {/* <TextareaAutosize
-                className="form-input"
-                aria-label="empty textarea"
-                minRows={5}
-                maxRows={5}
-                placeholder="Start writing..."
-                onChange={handleChange}
-                name="content"
-                type="text"
-                value={editedPost.content}
-                style={{ width: 200 }}
-            /><br/> */}
-            {/* <button className="buttons">edit your note</button> */}
+            ></input>
         </form>
         </div> 
-    ) : null}
+       ) : null}
     { !showEditForm ? (
       <>
         <span className="noteclick"onClick={handleShowEditForm}>{note}</span>

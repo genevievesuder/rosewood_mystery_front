@@ -1,14 +1,14 @@
-import { useState, useContext, useEffect } from 'react'
+import { useState, useContext } from 'react'
 import { UserContext } from '../../context/UserContext';
 import Notes from './Notes';
 import { NotifContext } from '../../context/NotifContext';
 
 
 const NotePad = () => {
- const {notif, setNotif} = useContext(NotifContext)
+ const {setNotif} = useContext(NotifContext)
  const {user, setUser} = useContext(UserContext)
  const mappedNotes = user.notes.map(note => <Notes key={note.id} {...note} note={note.note}/>)
-const [showForm, setShowForm] = useState(false)
+// const [showForm, setShowForm] = useState(false)
 
 const [noteData, setNoteData] = useState({
     note: ""
@@ -53,19 +53,18 @@ const handleSubmit = (e) => {
 
 
   return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input 
-                  className="note-input"
-                  name="note"
-                  onChange={handleChange}
-                  type="text"
-                  value={noteData.note}
-                  placeholder='Write a note...'
-                />
-            </form>
-            {/* <button type='submit'>Ok</button> */}
-        {mappedNotes}
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input 
+        className="note-input"
+        name="note"
+        onChange={handleChange}
+        type="text"
+        value={noteData.note}
+        placeholder='Write a note...'
+        />
+      </form>
+      {mappedNotes}
     </div>
   )
 }

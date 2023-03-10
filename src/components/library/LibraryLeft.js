@@ -1,24 +1,21 @@
 import BackBtn from '../../main/BackBtn'
 import { UserContext } from '../../context/UserContext';
 import { useState, useContext } from 'react'
-// import {useNavigate} from 'react-router-dom'
 import { NotifContext } from "../../context/NotifContext";
-import Clue from '../Clue'
-import DndPuzzle from '../DndPuzzle';
+import Clue from '../clues/Clue'
+import DndPuzzle from '../puzzles/DndPuzzle';
 
 
 const LibraryLeft = () => {
 
-    const {notif, setNotif} = useContext(NotifContext)
-    const {user, setUser} = useContext(UserContext)
-  
-    const [openClue1, setOpenClue1] = useState(false)
-    const [openClue2, setOpenClue2] = useState(false)
-    // const [openClue3, setOpenClue3] = useState(false)
+const {setNotif} = useContext(NotifContext)
+const {user, setUser} = useContext(UserContext)
+
+const [openClue1, setOpenClue1] = useState(false)
+const [openClue2, setOpenClue2] = useState(false)
 
     const handleClick = async (clue_id) => {
         const resp = await Clue(clue_id)
-        console.log(resp)
         !!resp.id ? setUser(resp) : setNotif(resp)
     }
 
@@ -34,13 +31,6 @@ const open2 = () => {
     setOpenClue2(current => !current)
     setNotif("Hm. Needs a password. I wonder if something you've already found could work.")
 }
-
-// const open3 = () => {
-//     setOpenClue3(current => !current)
-//     if (!openClue1) {
-//         handleClick(4)
-//     }
-// }
 
 if (openClue1) {
     return (
@@ -62,15 +52,6 @@ if (openClue2) {
     </div>)
 }
 
-// if (openClue3) {
-//     return (
-//     <div className="clue-click-div">
-//      <button onClick={open3} className="clue-back-btn">x</button>
-//       <div className="clue-container">
-//        <p>welcome to Clue 3!!!!!!</p>
-//       </div>
-//     </div>)
-// }
 
 if (!user) return <h1>...loading</h1>
 
@@ -83,7 +64,6 @@ if (!user) return <h1>...loading</h1>
     { user.clues.length === 7 && user.hints.length === 3 ? (
         <button onClick={open2} className="ll2"></button>
     ) : null}
-        {/* <button onClick={open3} className="ll3"></button> */}
             <BackBtn />
         <div className="lib-container">
         <img className="library-view" src={process.env.PUBLIC_URL+"/library-left.jpg"} alt="library view"/>

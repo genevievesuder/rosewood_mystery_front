@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useState, useContext } from 'react'
 import { UserContext } from '../context/UserContext';
 
@@ -18,7 +18,6 @@ const Signup = ({setToggleAuth}) => {
           [name]: value
       }))
   }
-  // const navigate = useNavigate();
 
   return (
     <div className="signin-container">
@@ -30,7 +29,6 @@ const Signup = ({setToggleAuth}) => {
           className="signup-input"
           name="email"
           type="text"
-          // placeholder="johndoe"
           onChange={handleChange}
           value={formData.email}
         >
@@ -41,7 +39,6 @@ const Signup = ({setToggleAuth}) => {
           className="signup-input"
           name="password"
           type="password"
-          // placeholder="password"
           onChange={handleChange}
           value={formData.password}
         >

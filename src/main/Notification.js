@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import { NotifContext } from '../context/NotifContext';
 
 const Notifications = () => {

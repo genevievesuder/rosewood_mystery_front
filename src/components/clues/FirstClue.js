@@ -1,21 +1,17 @@
 import { useState, useContext } from 'react'
-import {useNavigate} from 'react-router-dom'
-import { ClueContext } from '../context/ClueContext'
-import { NotifContext } from "../context/NotifContext";
+import { NotifContext } from "../../context/NotifContext";
 import Clue from './Clue'
-import { UserContext } from '../context/UserContext';
+import { UserContext } from '../../context/UserContext';
 
 
 const FirstClue = (user_id) => {
   const [stickyNote, setStickyNote] = useState(false)
-  const navigate = useNavigate()
-  const {notif, setNotif} = useContext(NotifContext)
+  const { setNotif} = useContext(NotifContext)
   const {user, setUser} = useContext(UserContext)
 
 
 const handleClick = async () => {
   const resp = await Clue(user.clues.length +1)
-  console.log(resp)
   !!resp.id ? setUser(resp) : setNotif(resp)
   setNotif("Check your journal")
 }

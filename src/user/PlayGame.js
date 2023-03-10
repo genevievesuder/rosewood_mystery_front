@@ -1,6 +1,6 @@
 import Login from "./Login"
 import Signup from "./Signup"
-import Home from '../components/Home';
+import Home from '../components/rooms/Home';
 import {useState, useContext} from 'react';
 import { UserContext } from '../context/UserContext';
 

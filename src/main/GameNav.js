@@ -1,17 +1,6 @@
-import { Link, useNavigate } from 'react-router-dom'
-import { useState, useContext, useEffect } from 'react'
-import { UserContext } from '../context/UserContext';
-import { NotifContext } from '../context/NotifContext';
-
-// NotifContext import>>
-// import { NotifContext } from '../context/NotifContext';
-// const {notif, setNotif} = useContext(NotifContext)
-
+import { Link } from 'react-router-dom'
 
 const GameNav = () => {
-  const {notif, setNotif} = useContext(NotifContext)
-  const {user, handleLogout} = useContext(UserContext)
-  const navigate = useNavigate()
 
   return (
     <div className="game-nav">

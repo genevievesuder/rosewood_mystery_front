@@ -1,9 +1,8 @@
-import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import { useState, useContext, useEffect } from 'react'
-import { UserContext } from '../context/UserContext';
-import { NotifContext } from '../context/NotifContext';
-import Hint from './Hint'
+import { useState, useContext } from 'react'
+import { UserContext } from '../../context/UserContext';
+import { NotifContext } from '../../context/NotifContext';
+import Hint from '../clues/Hint'
 
 const Npc1 = () => {
 const {user, setUser} = useContext(UserContext)
@@ -12,18 +11,16 @@ const navigate = useNavigate()
 
 const handleGiveHint = async (hint_id) => {
     const resp = await Hint(hint_id)
-    console.log(resp)
     !!resp.id ? setUser(resp) : setNotif(resp)
     navigate("/home")
     setNotif("You received a hint.")
 }
 
-const dialogue = ["Hi there, you must be new here. I haven't seen you before.", `It's nice to meet you ${user.character_name}, I'm Theo`, "I've been coming here since I was a little girl. I love poetry, and this library has a wonderful collection.", "I recommend checking it out. Look for the book with a crescent moon on it. It's my favorite.", "Well, I'll see you around!"];
+const dialogue = ["Hi there, you must be new here. I haven't seen you before.", `It's nice to meet you ${user.character_name}, I'm Theo`, "I've been coming here since I was a little girl. I love poetry, and this library has a wonderful collection.", "I recommend checking it out. Look for the book with a crescent moon on it. It's my favorite.", "Well, I'll see you around!", ""];
 debugger
 const [i, incrementIndex] = useState(0)
 const [text, setText] = useState(`${dialogue[i]}`);
 
-//EQUALS UNDEFINED!!! NEED TO FIX.
 
   function handleClick() {
     setText(`${dialogue[i+ 1]}`);
@@ -33,7 +30,6 @@ const [text, setText] = useState(`${dialogue[i]}`);
     )
   }
 
-//   const navigate = useNavigate()
 if (!user) return <h1>...loading</h1>
   return (      
       <div>

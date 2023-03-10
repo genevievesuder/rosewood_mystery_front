@@ -1,12 +1,9 @@
-import { createContext, useState, useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
-
+import { createContext, useState } from 'react';
 
 const NotifContext = createContext()
 
 const NotifProvider = ({children}) => {
-// const navigate = useNavigate()
-  const [notif, setNotif] = useState(""); //Or null?
+  const [notif, setNotif] = useState(""); 
 
 
   return (

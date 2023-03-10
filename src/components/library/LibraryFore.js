@@ -1,18 +1,18 @@
-import BackBtn from '../../main/BackBtn'
-import Clue from '../Clue'
-import { UserContext } from '../../context/UserContext';
 import { useState, useContext } from 'react'
 import {useNavigate} from 'react-router-dom'
+import { UserContext } from '../../context/UserContext';
 import { NotifContext } from "../../context/NotifContext";
+import BackBtn from '../../main/BackBtn'
+import Clue from '../clues/Clue'
 import Npc5 from './Npc4'
-import FinalRoom from '../FinalRoom';
-import { Navigate } from 'react-router-dom';
+import FinalRoom from '../rooms/FinalRoom';
+
 
 const LibraryRight = () => {
 
     const navigate = useNavigate()
     
-    const {notif, setNotif} = useContext(NotifContext)
+    const {setNotif} = useContext(NotifContext)
     const {user, setUser} = useContext(UserContext)
     const [reach, setReach] = useState(false)
     const [flipImg, setFlipImg] = useState(false)
@@ -24,10 +24,8 @@ const LibraryRight = () => {
     const [enterFinalRoom, setEnterFinalRoom] = useState(false)
 
 
-
     const handleClick = async (clue_id) => {
         const resp = await Clue(clue_id)
-        console.log(resp)
         !!resp.id ? setUser(resp) : setNotif(resp)
         // setNotif("Clue discovered")
     }
@@ -44,9 +42,6 @@ const open2 = () => {
 }
 const open3 = () => {
     setOpenClue3(current => !current)
-    // if (!openClue3 && user.clues.length >= 3 && user.hints.length >= 1) {
-    //     handleClick(4)
-    // }
 }
 
 
@@ -65,7 +60,7 @@ if (openClue1) {
       <Npc5 />
     </div>)
 }
-// { user.clues.length === 6  ? (
+
 if (openClue2) {
     return (
         <div className="home-container" style={{textAlign:'center'}}>
@@ -152,12 +147,6 @@ if (!user) return <h1>...loading</h1>
     
     <div className="library-left-container">
         <button onClick={open1} className="lf1"></button>
-    {/* { user.clues.length === 8 && user.hints.length === 3 ? ( */}
-        {/* <button onClick={handleOpenGlobe} className="lf2"></button> */}
-     {/* ) : ( */}
-     {/* { user.clues.length === 8 && user.hints.length === 3 ? (
-     <div onClick={handleOpenGlobe} className="lf2"></div>
-     ) : ( null)} */}
     { user.clues.length >= 1 ? (
         <button onClick={open2} className="lf2"></button>
     ) : ( null)}

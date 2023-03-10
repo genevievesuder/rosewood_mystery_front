@@ -1,10 +1,10 @@
-import {useState, useContext, useEffect} from 'react'
+import {useState, useContext} from 'react'
 import Letter from './Letter'
 import { useDrop } from 'react-dnd'
-import Clue from './Clue'
-import { UserContext } from '../context/UserContext';
-import {Navigate, useNavigate} from 'react-router-dom'
-import { NotifContext } from "../context/NotifContext";
+import Clue from '../clues/Clue'
+import { UserContext } from '../../context/UserContext';
+import {useNavigate} from 'react-router-dom'
+import { NotifContext } from "../../context/NotifContext";
 
 
 const Alphabet = [
@@ -116,12 +116,11 @@ const Alphabet = [
 
 const Dnd = () => {
     const navigate = useNavigate();
-    const {notif, setNotif} = useContext(NotifContext)
-    const {user, setUser} = useContext(UserContext)
+    const {setNotif} = useContext(NotifContext)
+    const {setUser} = useContext(UserContext)
 
     const handleClick = async (clue_id) => {
         const resp = await Clue(clue_id)
-        console.log(resp)
         !!resp.id ? setUser(resp) : setNotif(resp)
     }
     
@@ -139,8 +138,6 @@ const Dnd = () => {
         setDndBoard((dndBoard) => [...dndBoard, alphabetList[0]])
     };
 
-// const [win, setWin] = useState(false)
-
 
 const winningNumbers = dndBoard !== [] ? dndBoard.map(item => item.id) : null
     
@@ -151,11 +148,9 @@ const winningNumbers = dndBoard !== [] ? dndBoard.map(item => item.id) : null
             if (winningNumbers[i] === winningArray[i]) {
                 x.push("correct")
                 if (x.filter(res => res === "correct").length === 5) {
-                    console.log("CORRRREEEECT")
                     return "CORRECT"
                 }
             }
-            console.log(x);
         }
     }
 

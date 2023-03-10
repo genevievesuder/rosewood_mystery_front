@@ -1,12 +1,5 @@
-import React from 'react'
-import { createContext, useState, useEffect, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-// import { NotifContext } from '../context/NotifContext';
-import { UserContext } from '../context/UserContext';
 
 const Clue = async (clue_id) => {
-    // const {notif, setNotif} = useContext(NotifContext)
-    // const {user, setUser} = useContext(UserContext)
 
 try {
   const resp = await fetch("/user_clues", {

@@ -3,28 +3,25 @@ import Tile from "./Tile";
 import { TILE_COUNT, GRID_SIZE, BOARD_SIZE } from "./constants"
 import { canSwap, shuffle, swap, isSolved } from "./helpers"
 import './puzzle.css';
-import Clue from '../Clue'
+import Clue from '../clues/Clue'
 import { UserContext } from '../../context/UserContext';
 import { useContext } from 'react'
-// import {useNavigate} from 'react-router-dom'
 import { NotifContext } from "../../context/NotifContext";
 
 
 function Board() {
 
-  const {notif, setNotif} = useContext(NotifContext)
+  const {setNotif} = useContext(NotifContext)
   const {user, setUser} = useContext(UserContext)
 
 
   const handleClick = async (clue_id) => {
       const resp = await Clue(clue_id)
-      console.log(resp)
       !!resp.id ? setUser(resp) : setNotif(resp)
   }
 
   const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
-  const [isStarted, setIsStarted] = useState(false); //change back to false
-  console.log('is started:', isStarted)
+  const [isStarted, setIsStarted] = useState(false);
 
   const shuffleTiles = () => {
     const shuffledTiles = shuffle(tiles)

@@ -1,14 +1,12 @@
 import { createContext, useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NotifContext } from './/NotifContext';
-// import { ViewContext } from './ViewContext';
 
 
 const UserContext = createContext()
 
 const UserProvider = ({children}) => {
-// const {view, setView} = useContext(ViewContext)
-const {notif, setNotif} = useContext(NotifContext)
+const {setNotif} = useContext(NotifContext)
 const navigate = useNavigate()
   const [user, setUser] = useState(null);
 
@@ -19,18 +17,14 @@ const navigate = useNavigate()
           if (res.ok) {
               res.json()
               .then((user) => {
-                console.log(user)
                   setUser(user);
               });
           }
       })
   }, []);
 
-
-
   const handleLogin = (e, formData) => {
     e.preventDefault()
-    console.log(formData)
     fetch("/login", {
       method: "POST",
       headers: {
@@ -42,7 +36,6 @@ const navigate = useNavigate()
       if (resp.ok) {
         resp.json().then(userObj => {
           setUser(userObj)
-          // setView("main")
         })
       } else {
         resp.json().then(messageObj => setNotif(messageObj.error))
@@ -50,10 +43,8 @@ const navigate = useNavigate()
     })
 }
 
-
 const handleSignup = (e, formData) => {
     e.preventDefault()
-    console.log(formData)
     fetch("/users", {
       method: "POST",
       headers: {
@@ -71,7 +62,7 @@ const handleSignup = (e, formData) => {
           response.json().then(messageObj => setNotif(messageObj.errors))
         }
       })
-      // .catch(error => alert(error)) Dont need this line, right?
+      .catch(error => alert(error))
   }
 
   const handleLogout = () => {
@@ -90,7 +81,6 @@ const handleSignup = (e, formData) => {
       }) 
     }
 
-
     const handleAccountDeletion = () => {
       fetch(`/users/${user.id}`, {
         method: "DELETE",
@@ -107,10 +97,8 @@ const handleSignup = (e, formData) => {
         }) 
       }
   
-
   const editUser = (e, editedUserData, setEditedUserData) => {
     e.preventDefault()
-    console.log(editedUserData)
     fetch(`/users/${user.id}`, {
       method: "PATCH",
       headers: {

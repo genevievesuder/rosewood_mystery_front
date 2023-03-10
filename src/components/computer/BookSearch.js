@@ -1,15 +1,6 @@
-import DbBooks from './DbBooks'
-import HelpOutlineIcon from '@mui/icons-material/HelpOutlined';
-import HomeIcon from '@mui/icons-material/Home';
-import CoPresentIcon from '@mui/icons-material/CoPresent';
-import { useState, useContext, useEffect } from 'react'
-import { UserContext } from '../../context/UserContext';
-import { useNavigate } from 'react-router-dom';
-// import dotenv from 'dotenv'
-// dotenv.config()
+import { useState } from 'react'
+
 const API_KEY = process.env.REACT_APP_API_KEY;
-
-
 
 const BookSearch = () => {
     const [searchedBook, setSearchedBook] = useState(null)
