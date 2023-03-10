@@ -23,16 +23,16 @@ const LibraryLeft = () => {
     }
 
 const open1 = () => {
+    setNotif("This could be useful later on...")
     setOpenClue1(current => !current)
     if (!openClue1) {
         handleClick(2)
-        // setNotif("Clue discovered")
     }
 }
 
 const open2 = () => {
     setOpenClue2(current => !current)
-    setNotif("Maybe this needs some sort of password...")
+    setNotif("Hm. Needs a password. I wonder if something you've already found could work.")
 }
 
 // const open3 = () => {
