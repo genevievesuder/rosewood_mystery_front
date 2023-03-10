@@ -396,14 +396,17 @@ background-color: transparent;
   width: 5vw;
 }
 .lr1:hover{
-  cursor:pointer;
+    cursor: url(https://cur.cursors-4u.net/symbols/sym-2/sym164.cur), auto !important;
 }
+
 .lr2:hover{
-  cursor:pointer;
+    cursor: url(https://cur.cursors-4u.net/symbols/sym-2/sym164.cur), auto !important;
 }
+
 .lr3:hover{
-  cursor:pointer;
+    cursor: url(https://cur.cursors-4u.net/symbols/sym-2/sym164.cur), auto !important;
 }
+
 .lr2{
   background-color: transparent;
   top: 63%;
@@ -606,8 +609,8 @@ cursor: pointer;
   padding: 50px;
   /* border: 2px solid black; */
   width: 40vw;
-  height: 80vh;
-  top: 80%;
+  height: 60vh;
+  top: 90%;
   left: 25%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -900,20 +903,49 @@ cursor: pointer;
   text-shadow: 2px 2px #000000;
 }
 
+.note-input{
+  background-color: transparent;
+  border: transparent;
+}
+
+.show-note{
+  background-color: transparent;
+  border: transparent;
+}
+
+.show-note:hover{
+  cursor: url(https://cur.cursors-4u.net/others/oth-2/oth200.cur), auto !important;
+}
 .npc1{
   width:900px;
   margin: auto;
 }
 
+.form-input{
+  background-color: transparent;
+  border: transparent;
+}
 
-
+.eraser{
+  background-color: transparent;
+  border: transparent;
+  color: rgb(151, 0, 0);
+}
+.eraser:hover{
+ cursor: pointer;
+}
+.noteclick:hover{
+  cursor: url(https://cur.cursors-4u.net/others/oth-2/oth200.cur), auto !important;
+}
 .edit-form-container{
+  padding:10px;
+  background-color: rgba(128, 128, 128, 0.205);
+  height: 23vh;
   /* text-align: center;
   background-color: rgba(128, 128, 128, 0.42);
   border: 10px solid rgb(114, 77, 83);
   border-style: ridge;
   padding: 10px;
-  height: 40vh;
   margin: auto; */
 }
 
@@ -1150,6 +1182,7 @@ font-family: 'Sono', sans-serif; */
 /* Why when I put 100% for height it doesnt do it? Shouldnt it go to the parent (body) */
 .monitor-container {
 background-color: rgb(219, 219, 223);
+overflow: scroll;
 /* height: 100vh; */
 /* max-width: 98vw; */
 }
@@ -1180,6 +1213,8 @@ box-shadow: 4px 4px;
 
 .database-container{
 /* background-color: darkkhaki; */
+/* background-color: pink;
+overflow: scroll; */
 }
 
 .db-toolbar{
@@ -1211,10 +1246,11 @@ box-shadow: 4px 4px;
 .book-header{
   width:100%;
   display: grid;
-  grid-template-columns: 3vw 30vw 20vw 13vw 14vw;
-  grid-template-rows: 100vh;
+  grid-template-columns: 3vw 35vw 30vw 30vw;
+  /* grid-template-rows: 100vh; */
   overflow: hidden;
   text-align: center;
+  margin-left: .25vw;
 }
 
 .book-attr-label{
@@ -1226,18 +1262,21 @@ box-shadow: 4px 4px;
   display: grid;
   grid-template-columns: 20vw 80vw;
   grid-template-rows: 100vh;
-  overflow:hidden;
+  /* overflow:hidden; */
 }
 
 .single-book-click{
   padding: 10px;
   padding-top: 10vh;
-  grid-column: 1;
-  grid-row: 1;
-  overflow: scroll;
+  max-width: 25vw;
+  /* grid-column: 1;
+  grid-row: 1; */
+  /* overflow: scroll; */
   /* background-color:rgb(110, 110, 140); */
   /* min-width: 100%;
   max-width: 100%; */
+  /* max-width: 25vw; */
+  /* min-height:20vh; */
 }
 
 .globe{
@@ -1252,7 +1291,7 @@ box-shadow: 4px 4px;
 
 .book-img{
   margin-top: 10px;
-  max-width: 100%;
+  max-width: 30%;
   max-height: 100%;
   object-fit: contain;
 }
@@ -1266,6 +1305,13 @@ box-shadow: 4px 4px;
   /* overflow: scroll; */
   background-color: black;
   text-align: center; 
+}
+
+.tips{
+  font-family: 'Nanum Myeongjo', serif;
+  font-size:large;
+  text-align: center;
+  padding: 35px;
 }
 
 .turn-around{
@@ -1373,26 +1419,36 @@ box-shadow: 4px 4px;
    cursor: url(https://cur.cursors-4u.net/cursors/cur-2/cur116.cur), auto !important;
 }
 
+.db-col-1{
+  min-width: 100vw;
+}
+
 .db-col-2{
-  /* grid-column: 2;
-  grid-row: 1; */
-  min-width:100%;
+  /* display: inline-block; */
+  grid-column: 2;
+  grid-row: 1;
+  min-width:100vw;
   background-color: rgb(248, 248, 248);
   overflow: scroll;
+  min-height:100vh;
+  margin:auto;
 }
 
 
 .db-booklist{
   /* display: grid; Columns for book attributes */
-  width:100%;
-  display: grid;
-  grid-template-columns: 3vw 30vw 20vw 13vw 14vw;
+  min-width:100vw;
+  display: inline-grid;
+  grid-template-columns: 3vw 35vw 30vw 30vw;
   /* grid-template-rows: 100vh; */
   overflow: hidden;
+  margin-left: .25vw;
+
 }
 
 .dbc-1{
  border: 1px solid black;
+ min-width:100%;
 }
 .dbc-2{
   border: 1px solid black;
@@ -1402,14 +1458,16 @@ box-shadow: 4px 4px;
 }
 .dbc-4{
   border: 1px solid black;
+  min-width:100%;
 }
-.dbc-5{
+/* .dbc-5{
   border: 1px solid black;
-}
+} */
 
 .help-container{
   background-color: white;
   height: 100vh;
+  margin: auto;
 }
 
 /* Members tab */
@@ -1467,7 +1525,10 @@ box-shadow: 4px 4px;
 .settings-container{
   background-color: white;
   height: 100vh;
+  font-family: 'Nanum Myeongjo', serif;
+  font-size:large;
   text-align: center;
+  padding: 35px;
 }
 
 /* … */

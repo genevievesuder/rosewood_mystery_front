@@ -28,10 +28,17 @@ if (!user) return <h1>...loading</h1>
         </span>
         <span style={{float:"right"}}>Welcome, {user.character_name}</span>
       </div>
-      <div className="help-container">
-        <h1>HEEEEELLLP</h1>
-        <div>
-            <p>This will be where the user can see game premise and how to play</p>
+      <div className="help-container"><br/>
+        <div className="tips">
+        <h1>Gameplay</h1>
+           <h4>Rosewood Library holds many clues to be discovered...</h4><br/>
+           <span>Tips & Pointers</span><br/><br/>
+           <p>Some clues are only visible by scrolling your mouse over them. Keep an eye on your cursor for when it turns red!<br/>❧<br/>
+           Your customers have helpful information for you. Don't worry, if you missed what they said just check your journal.
+           <br/>❧<br/>
+           Gameplay is synchronous.. follow the clues and hints in order to unlock the next one.<br/><br/>
+           Have fun!
+           </p>
         </div>
       </div>
     </div>

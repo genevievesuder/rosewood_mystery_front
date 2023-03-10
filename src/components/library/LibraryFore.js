@@ -14,7 +14,7 @@ const LibraryRight = () => {
     
     const {notif, setNotif} = useContext(NotifContext)
     const {user, setUser} = useContext(UserContext)
-  
+    const [reach, setReach] = useState(false)
     const [flipImg, setFlipImg] = useState(false)
     const [openClue1, setOpenClue1] = useState(false)
     const [openClue2, setOpenClue2] = useState(false)
@@ -103,11 +103,15 @@ const hint9 = () => {
     navigate('/library')
 }
 
+
 if (book) {
     return (
         <div className="home-container" style={{textAlign:'center'}}>
             <button onClick={hint9} className="clue-back-btn">x</button>
-            <img onClick={hint9} className="globe" src={process.env.PUBLIC_URL+"/secretbook.jpg"} alt="library view"/>
+        { !reach ? (
+        <img onClick={() => setReach(true)} className="globe" src={process.env.PUBLIC_URL+"/openglobe.jpg"} alt="library view"/>
+        ) : (<img onClick={() => handleClick(9)} className="globe" src={process.env.PUBLIC_URL+"/secretbook.jpg"} alt="library view"/>
+        )}
         </div>) 
 }
 
@@ -116,8 +120,7 @@ if (openGlobe) {
     return (
         <div className="home-container">
         <button onClick={handleOpenGlobe} className="clue-back-btn">x</button>
-        <div onClick={() => setBook(true)} className="reach-inside-globe"></div>
-         <img className="globe" src={process.env.PUBLIC_URL+"/openglobe.jpg"} alt="the globe is open"/>
+         <img onClick={() => setBook(true)} className="globe" src={process.env.PUBLIC_URL+"/globe.png"} alt="globe"/>
        </div>
     )
 }
@@ -136,10 +139,10 @@ if (user.clues.length === 10) {
 
 if (user.clues.length === 8 && user.hints.length === 3) {
     return(
-        <>
-        <div onClick={handleOpenGlobe} className="lf2"></div>  
-        <img className="home-view" src={process.env.PUBLIC_URL+"/library-fore.png"} alt="library view"/>
-        </>
+        <div className="lib-container">
+          <div onClick={handleOpenGlobe} className="lf2"></div>  
+          <img className="home-view" src={process.env.PUBLIC_URL+"/library-fore.png"} alt="library view"/>
+        </div>
     )
 }
 

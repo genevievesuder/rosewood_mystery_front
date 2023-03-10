@@ -46,8 +46,8 @@ if (!user) return <h1>...loading</h1>
         </span>
         <span style={{float:"right"}}>Welcome, {user.character_name}</span>
       </div>
-      <div><h1>Account settings</h1><br/></div>
       <div className="settings-container">
+       <h1>Account settings</h1><br/>
         
     
 {/* BEGIN */}
