@@ -60,11 +60,14 @@ const editNote = (e) => {
           .then(messageObj => setNotif(messageObj.errors))
         } else {
           res.json()
-          .then(newNote => setUser((currentUser) => {
-            const index = currentUser.notes.findIndex(note => note.id === newNote.id)
-            return [...currentUser.notes.slice(0, index), newNote, ...currentUser.notes.slice(index + 1)]}))
+          .then(newNote => {
+            setUser((currentUser) => {
+              const index = currentUser.notes.findIndex(note => note.id === newNote.id)
+              return {...currentUser, notes:[...currentUser.notes.slice(0, index), newNote, ...currentUser.notes.slice(index + 1)]}
+            })
             setShowEditForm(false)
-         }
+          })
+          }
        })
   }
 

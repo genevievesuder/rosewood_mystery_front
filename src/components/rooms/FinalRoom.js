@@ -52,13 +52,14 @@ const placeCrystal = () => {
         })
            .then((r) => { 
             if (r.status === 204) {
-             navigate('./home')
+             setUser(currentUser => ({...currentUser, clues:[], hints: []}))
              setNotif("The next day...")
+         
             } else {
                 r.json()
                 .then(err => alert(err))
             }        
-        })      
+        }).then(() => navigate('/home'))
     }
 
     if (!user) return <h1>...loading</h1>

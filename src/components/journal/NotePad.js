@@ -42,7 +42,9 @@ const handleSubmit = (e) => {
                 ...currentUser.notes, newNote
               ]
             }))
-            setNoteData("")
+            setNoteData({
+              note: ""
+          })
         })
       } else {
         res.json().then(errorObj => setNotif(errorObj.errors))

@@ -7,17 +7,17 @@ body { min-height: 100vh;
 }
 
 /* || Imports */
-
-@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&family=Berkshire+Swash&family=Caveat:wght@700&family=La+Belle+Aurore&family=Libre+Baskerville:ital@1&family=Nanum+Myeongjo&family=Sono:wght@500&family=Special+Elite&display=swap');  /*font-family: 'Averia Serif Libre', cursive;
-font-family: 'Berkshire Swash', cursive;
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&family=Berkshire+Swash&family=Caveat:wght@700&family=La+Belle+Aurore&family=Labrada&family=Libre+Baskerville:ital@1&family=Nanum+Myeongjo&family=Sono:wght@500&family=Special+Elite&family=Yuji+Syuku&display=swap');
+/* font-family: 'Berkshire Swash', cursive;
 font-family: 'Caveat', cursive;
 font-family: 'La Belle Aurore', cursive;
 font-family: 'Nanum Myeongjo', serif;
 font-family: 'Special Elite', cursive;
 font-family: 'Sono', sans-serif;
-   */
+font-family: 'Labrada', serif;
+font-family: 'Libre Baskerville', serif;
 
-  
+   */
 .drag-div{
 background-color: transparent;
 }
@@ -751,21 +751,25 @@ cursor: pointer;
 }
 
 .play{
-  margin-top: 3vh;
-  padding: 30px;
-  top: 59%;
+  font-size: 25px;
+  font-family: 'Labrada', serif;
+  margin-top: 10vh;
+  padding: 10px;
+  top:70%;
   left: 56%;
   transform: translate(-50%, -50%);
   text-align: center;
   position: absolute;
   z-index: 2000;
-  width: 13vw;
-  filter: drop-shadow(5px 3px 2px #690969);
-  background-color: rgb(255, 255, 255);
-  border-radius: 15px;
-  width: 7vw;
+  filter: drop-shadow(2px 1px 10px #ffffff4b);
+  background-color: rgb(52, 20, 20);
+  border-radius: 10px;
+  min-width: 5vw;
+  background-image: url(https://img.freepik.com/premium-vector/black-water-shape-abstract-pattern-background_290875-72.jpg);
+  background-size: cover;
 }
-
+/* font-family: 'Labrada', serif;
+font-family: 'Libre Baskerville', serif; */
 .welcome-box{
   top: 60%;
   left: 38%;
