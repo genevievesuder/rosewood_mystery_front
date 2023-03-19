@@ -21,7 +21,7 @@ function Board() {
   }
 
   const [tiles, setTiles] = useState([...Array(TILE_COUNT).keys()]);
-  const [isStarted, setIsStarted] = useState(true);
+  const [isStarted, setIsStarted] = useState(false);
 
   const shuffleTiles = () => {
     const shuffledTiles = shuffle(tiles)
